@@ -1,0 +1,6 @@
+{
+  "name": "Crown Roof Restorations",
+  "description": "Complete tile and tin roofing solutions, full restorations, repairs, 24/7 leak detection, and exterior maintenance backed by a 10-year workmanship warranty.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
