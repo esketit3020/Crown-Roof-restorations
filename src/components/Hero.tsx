@@ -1,7 +1,8 @@
 import React from 'react';
-import { ShieldCheck, Star, Phone, ArrowRight, CheckCircle2, Clock, Award, Hammer } from 'lucide-react';
+import { ShieldCheck, Star, Phone, ArrowRight, CheckCircle2, Clock, Award, Hammer, SlidersHorizontal } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/roofingData';
 import { CrownLogo } from './CrownLogo';
+import { BeforeAfterSlider } from './BeforeAfterSlider';
 
 interface HeroProps {
   onOpenQuoteModal: () => void;
@@ -60,7 +61,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
               </div>
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0" />
-                <span>24/7 Rapid Emergency Leak Repairs</span>
+                <span>Expert Leak Detection & Repairs</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0" />
@@ -84,15 +85,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
               </button>
 
               <a
-                id="hero-emergency-call-btn"
-                href={`tel:${BUSINESS_INFO.emergencyPhone.replace(/\s+/g, '')}`}
+                id="hero-call-btn"
+                href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
                 className="px-6 py-4 rounded-xl bg-[#0D0D0D] hover:bg-[#1A1A1A] text-white font-bold text-base border border-[#D4AF37]/35 hover:border-[#D4AF37] transition-all flex items-center justify-center gap-3 shadow-md group"
               >
-                <span className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4AF37] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-[#D4AF37]"></span>
-                </span>
-                <span>24/7 EMERGENCY LEAK LINE</span>
+                <Phone className="w-5 h-5 text-[#D4AF37] group-hover:rotate-12 transition-transform" />
+                <span>CALL: {BUSINESS_INFO.phone}</span>
               </a>
             </div>
 
@@ -102,7 +100,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
                 <span className="text-[#D4AF37] font-bold uppercase tracking-wider">Serving All Sectors:</span>
                 <span className="text-neutral-300">Residential Homeowners</span> •
                 <span className="text-neutral-300">Commercial Property Managers</span> •
-                <span className="text-neutral-300">Emergency Repairs</span> •
+                <span className="text-neutral-300">Urgent Leak Repairs</span> •
                 <span className="text-neutral-300">High-End Architectural Builds</span>
               </p>
             </div>
@@ -142,20 +140,21 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
                     </span>
                   </div>
 
-                  {/* Hero Visual Image: Pristine Restored Roof */}
-                  <div className="relative rounded-xl overflow-hidden aspect-[4/3] group shadow-inner border border-neutral-800">
-                    <img
-                      src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80"
-                      alt="Restored modern terracotta & slate roof by Crown Roof Restorations"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  {/* Hero Visual Image: Interactive Before & After Restoration Slider */}
+                  <div className="space-y-2">
+                    <BeforeAfterSlider
+                      beforeImage="/roof-before.jpg"
+                      afterImage="/roof-after.jpg"
+                      beforeAlt="Melbourne tile roof before Crown restoration"
+                      afterAlt="Melbourne tile roof after Crown high-gloss restoration"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent"></div>
-                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs">
-                      <span className="bg-black/90 text-[#FDE79D] px-2.5 py-1 rounded-md font-semibold backdrop-blur-sm border border-[#D4AF37]/40">
-                        The Crown Finish
+                    <div className="flex items-center justify-between text-xs px-1">
+                      <span className="text-[#FDE79D] font-semibold flex items-center gap-1.5">
+                        <SlidersHorizontal className="w-3.5 h-3.5 text-[#D4AF37]" />
+                        <span>Interactive Before & After</span>
                       </span>
-                      <span className="text-white font-medium bg-black/70 px-2 py-0.5 rounded backdrop-blur-sm">
-                        Tile & Tin Restorations
+                      <span className="text-neutral-400 font-medium">
+                        Tile & Tin Full Rejuvenation
                       </span>
                     </div>
                   </div>
@@ -174,10 +173,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
                     <div className="bg-[#141414] rounded-xl p-3 border border-[#D4AF37]/20">
                       <div className="flex items-center gap-2 text-[#D4AF37] mb-1">
                         <Clock className="w-4 h-4" />
-                        <span className="text-xs font-bold uppercase tracking-wider">Availability</span>
+                        <span className="text-xs font-bold uppercase tracking-wider">Response</span>
                       </div>
-                      <p className="text-sm font-extrabold text-white">24/7 Emergency</p>
-                      <p className="text-[11px] text-neutral-400">Leak detection & dispatch</p>
+                      <p className="text-sm font-extrabold text-white">Prompt Service</p>
+                      <p className="text-[11px] text-neutral-400">Melbourne & surrounds</p>
                     </div>
                   </div>
 

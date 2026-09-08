@@ -150,7 +150,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         <div className="max-w-4xl mx-auto text-center relative z-10 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/35 text-[#FDE79D] text-xs font-bold tracking-widest uppercase shadow-sm">
             <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37]" />
-            <span>Complete Scope of Capabilities • 23 Certified Solutions</span>
+            <span>Complete Scope of Capabilities & Certified Solutions</span>
           </div>
 
           <h1 className="font-cinzel text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
@@ -158,7 +158,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           </h1>
 
           <p className="text-neutral-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Every roofing repair, full tile and tin restoration, 24/7 leak detection, repointing, guttering, and exterior pressure washing service we deliver across Melbourne.
+            Every roofing repair, full tile and tin restoration, expert leak detection, repointing, guttering, and exterior pressure washing service we deliver across Melbourne.
           </p>
 
           <div className="pt-2 flex flex-wrap items-center justify-center gap-4 text-xs text-neutral-300">
@@ -192,7 +192,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   : 'bg-[#0D0D0D] text-neutral-300 hover:text-white border border-[#D4AF37]/25'
               }`}
             >
-              All Services ({ALL_SERVICES.length})
+              All Services
             </button>
 
             <button
@@ -203,7 +203,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   : 'bg-[#0D0D0D] text-neutral-300 hover:text-white border border-[#D4AF37]/25'
               }`}
             >
-              Tile & Tin Roofing ({tileTinCount})
+              Tile & Tin Roofing
             </button>
 
             <button
@@ -214,7 +214,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   : 'bg-[#0D0D0D] text-neutral-300 hover:text-white border border-[#D4AF37]/25'
               }`}
             >
-              Exterior Cleaning & Maintenance ({exteriorCount})
+              Exterior Cleaning & Maintenance
             </button>
           </div>
 
@@ -231,7 +231,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           </div>
         </div>
 
-        {/* Services Grid (All 23 Services) */}
+        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {filteredServices.map((service) => (
             <div
@@ -314,7 +314,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               }}
               className="text-[#D4AF37] text-xs font-bold underline cursor-pointer"
             >
-              Reset filters to see all 23 services
+              Reset filters to see all services
             </button>
           </div>
         )}

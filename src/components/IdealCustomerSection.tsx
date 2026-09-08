@@ -33,7 +33,7 @@ export const IdealCustomerSection: React.FC<IdealCustomerSectionProps> = ({ onOp
             Who We Serve: All Properties, Any Roofing Need
           </h2>
           <p className="text-neutral-400 text-base">
-            From private family residences to commercial complexes and emergency leaks, our dedicated crew delivers the highest trade standard across every sector.
+            From private family residences to commercial complexes and urgent roof leaks, our dedicated crew delivers the highest trade standard across every sector.
           </p>
         </div>
 

@@ -70,13 +70,13 @@ export const QuoteCalculatorModal: React.FC<QuoteCalculatorModalProps> = ({
   const propertyTypes = [
     'Residential Home',
     'Commercial Property',
-    'Emergency Repair',
+    'Urgent Leak Repair',
     'High-End Build',
   ];
 
   const urgencyLevels = [
-    { label: '24/7 Emergency (Within 2 hrs)', value: '24/7 Emergency', isAlert: true },
-    { label: 'Prompt (Within 24-48 hrs)', value: 'Prompt', isAlert: false },
+    { label: 'Urgent / Active Leak (Within 24 hrs)', value: 'Urgent Leak', isAlert: true },
+    { label: 'Prompt (Within 2-3 days)', value: 'Prompt', isAlert: false },
     { label: 'Standard Inspection (This week)', value: 'Standard Inspection', isAlert: false },
   ];
 

@@ -39,7 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const navLinks = [
     { name: 'Home', page: 'home' as const, sectionId: 'hero' },
     { name: 'Priority Services', page: 'home' as const, sectionId: 'priority-services' },
-    { name: 'Full Services (23)', page: 'services' as const, isHighlight: true },
+    { name: 'Full Services', page: 'services' as const, isHighlight: true },
     { name: 'Why Crown', page: 'home' as const, sectionId: 'why-crown' },
     { name: 'Materials', page: 'home' as const, sectionId: 'materials' },
     { name: 'Before & After', page: 'home' as const, sectionId: 'showcase' },
@@ -51,14 +51,14 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* Top Emergency & Trust Announcement Bar */}
       <div className="bg-black border-b border-[#D4AF37]/25 text-xs py-2 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-          {/* Left: 24/7 Leak Detection callout */}
+          {/* Left: Quality Roofing & Leak Detection callout */}
           <div className="flex items-center gap-3">
             <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#D4AF37]/10 text-[#FDE79D] border border-[#D4AF37]/40 font-semibold tracking-wide">
-              <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse"></span>
-              24/7 LEAK DETECTION
+              <span className="w-2 h-2 rounded-full bg-[#D4AF37]"></span>
+              LEAK DETECTION & REPAIRS
             </span>
             <span className="hidden sm:inline text-neutral-300 text-[11px]">
-              Emergency roof leak repairs day & night across all suburbs
+              Prompt inspections & repairs across Melbourne and surrounding suburbs
             </span>
           </div>
 
@@ -127,14 +127,14 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Right Action CTAs */}
           <div className="hidden sm:flex items-center gap-3">
             <a
-              href={`tel:${BUSINESS_INFO.emergencyPhone.replace(/\s+/g, '')}`}
-              className="hidden xl:flex flex-col text-right pr-2"
+              href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
+              className="hidden xl:flex flex-col text-right pr-2 group"
             >
-              <span className="text-[10px] uppercase font-bold text-[#D4AF37] tracking-wider">
-                24/7 Emergency Line
+              <span className="text-[10px] uppercase font-bold text-[#D4AF37] tracking-wider group-hover:text-[#FDE79D]">
+                Direct Line
               </span>
-              <span className="text-sm font-extrabold text-white">
-                {BUSINESS_INFO.emergencyPhone}
+              <span className="text-sm font-extrabold text-white group-hover:text-[#FDE79D]">
+                {BUSINESS_INFO.phone}
               </span>
             </a>
 

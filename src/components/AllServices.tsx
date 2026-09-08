@@ -117,7 +117,7 @@ export const AllServices: React.FC<AllServicesProps> = ({ onOpenQuoteModal }) =>
             Our Complete Roofing & Exterior Services
           </h2>
           <p className="text-neutral-400 text-base">
-            From minor tile repairs and 24/7 leak detection to full roof restorations, repainting, and exterior pressure washing.
+            From minor tile repairs and leak detection to full roof restorations, repainting, and exterior pressure washing.
           </p>
         </div>
 
@@ -166,7 +166,7 @@ export const AllServices: React.FC<AllServicesProps> = ({ onOpenQuoteModal }) =>
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search 23+ services..."
+              placeholder="Search all services..."
               className="w-full bg-[#0D0D0D] border border-[#D4AF37]/30 rounded-xl pl-9 pr-4 py-2 text-xs sm:text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-[#D4AF37] transition-colors"
             />
           </div>
@@ -254,7 +254,7 @@ export const AllServices: React.FC<AllServicesProps> = ({ onOpenQuoteModal }) =>
               }}
               className="text-[#D4AF37] text-xs font-bold underline"
             >
-              Reset filters to see all 23 services
+              Reset filters to see all services
             </button>
           </div>
         )}

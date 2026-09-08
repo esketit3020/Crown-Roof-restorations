@@ -61,7 +61,7 @@ export const PriorityServices: React.FC<PriorityServicesProps> = ({ onOpenQuoteM
               {index === 2 && (
                 <div className="absolute -top-3.5 left-6 bg-[#D4AF37]/20 border border-[#D4AF37]/50 text-[#FDE79D] font-bold text-[11px] uppercase tracking-wider py-1 px-3.5 rounded-full shadow-sm flex items-center gap-1.5">
                   <Clock className="w-3.5 h-3.5" />
-                  <span>24/7 Rapid Response</span>
+                  <span>Prompt Local Response</span>
                 </div>
               )}
 

@@ -16,7 +16,7 @@ export const FullServicesTeaser: React.FC<FullServicesTeaserProps> = ({
 
   const sampleCapabilities = [
     { title: 'Tile & Tin Roof Restorations', category: 'Tile & Tin' },
-    { title: '24/7 Emergency Leak Detection', category: 'Priority' },
+    { title: 'Comprehensive Leak Detection & Repairs', category: 'Priority' },
     { title: 'Flexible Pointing & Rebedding', category: 'Tile & Tin' },
     { title: 'Valley Iron & Flashing Renewals', category: 'Tile & Tin' },
     { title: 'High-Pressure Roof Cleaning', category: 'Exterior' },
@@ -37,15 +37,15 @@ export const FullServicesTeaser: React.FC<FullServicesTeaserProps> = ({
             <div className="lg:col-span-7 space-y-4">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/35 text-[#FDE79D] text-xs font-bold tracking-widest uppercase">
                 <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
-                <span>Complete Catalog • 23 Certified Solutions</span>
+                <span>Complete Catalog of Certified Solutions</span>
               </div>
 
               <h2 className="font-cinzel text-2xl sm:text-4xl font-bold text-white tracking-tight leading-snug">
-                Explore Our Full 23-Service Directory On Our Dedicated Services Page
+                Explore Our Full Services Directory On Our Dedicated Services Page
               </h2>
 
               <p className="text-neutral-300 text-sm sm:text-base leading-relaxed max-w-xl">
-                Looking for a specific repair, flashing adjustment, or exterior wash? We provide {tileTinCount} dedicated tile & tin roofing solutions and {exteriorCount} exterior property maintenance services with zero exclusions.
+                Looking for a specific repair, flashing adjustment, or exterior wash? We provide comprehensive tile & tin roofing solutions and exterior property maintenance services with zero exclusions.
               </p>
 
               {/* Badges / Stats */}
@@ -66,7 +66,7 @@ export const FullServicesTeaser: React.FC<FullServicesTeaserProps> = ({
                   onClick={onNavigateToServices}
                   className="px-6 py-3.5 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm shadow-md shadow-[#D4AF37]/20 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer border border-[#FDE79D]/40"
                 >
-                  <span>View Full Services Directory (23)</span>
+                  <span>View Full Services Directory</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
 
@@ -89,7 +89,7 @@ export const FullServicesTeaser: React.FC<FullServicesTeaserProps> = ({
                   onClick={onNavigateToServices}
                   className="text-[11px] text-[#D4AF37] hover:underline font-semibold cursor-pointer"
                 >
-                  See All 23 →
+                  See All Services →
                 </button>
               </div>
 
@@ -113,7 +113,7 @@ export const FullServicesTeaser: React.FC<FullServicesTeaserProps> = ({
                   onClick={onNavigateToServices}
                   className="text-xs text-neutral-400 hover:text-[#FDE79D] transition-colors cursor-pointer"
                 >
-                  + 15 more specialist roofing & exterior services on the full services page
+                  Explore all specialist roofing & exterior services on the full services page
                 </button>
               </div>
             </div>

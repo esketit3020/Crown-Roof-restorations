@@ -116,7 +116,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
                     onClick={() => handleNavigate('services')}
                     className="text-left text-[#FDE79D] hover:underline font-bold transition-colors cursor-pointer flex items-center gap-1.5"
                   >
-                    <span>View All 23 Services Directory</span>
+                    <span>View Full Services Directory</span>
                     <ArrowRight className="w-3 h-3 text-[#D4AF37]" />
                   </button>
                 </li>
@@ -134,21 +134,21 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
                   className="flex items-center gap-2.5 text-white hover:text-[#FDE79D] font-bold transition-colors"
                 >
                   <Phone className="w-4 h-4 text-[#D4AF37] shrink-0" />
-                  <span>{BUSINESS_INFO.phone}</span>
+                  <span>Call: {BUSINESS_INFO.phone}</span>
                 </a>
+
+                <div className="flex items-center gap-2.5 text-[#FDE79D] font-medium">
+                  <Clock className="w-4 h-4 text-[#D4AF37] shrink-0" />
+                  <span>Prompt Melbourne-Wide Service</span>
+                </div>
 
                 <a
-                  href={`tel:${BUSINESS_INFO.emergencyPhone.replace(/\s+/g, '')}`}
-                  className="flex items-center gap-2.5 text-[#FDE79D] hover:text-white font-bold transition-colors"
+                  href={`mailto:${BUSINESS_INFO.email}`}
+                  className="flex items-center gap-2.5 text-neutral-300 hover:text-[#FDE79D] transition-colors group"
                 >
-                  <Clock className="w-4 h-4 text-[#D4AF37] shrink-0" />
-                  <span>24/7 Emergency: {BUSINESS_INFO.emergencyPhone}</span>
-                </a>
-
-                <div className="flex items-center gap-2.5 text-neutral-300">
                   <Mail className="w-4 h-4 text-[#D4AF37] shrink-0" />
                   <span className="truncate">{BUSINESS_INFO.email}</span>
-                </div>
+                </a>
 
                 <div className="flex items-center gap-2.5 text-neutral-300">
                   <MapPin className="w-4 h-4 text-[#D4AF37] shrink-0" />

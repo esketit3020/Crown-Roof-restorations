@@ -4,7 +4,6 @@ import { Hero } from './components/Hero';
 import { PriorityServices } from './components/PriorityServices';
 import { FullServicesTeaser } from './components/FullServicesTeaser';
 import { ServicesPage } from './components/ServicesPage';
-import { EmergencyBanner } from './components/EmergencyBanner';
 import { WhyCrown } from './components/WhyCrown';
 import { MaterialsSection } from './components/MaterialsSection';
 import { IdealCustomerSection } from './components/IdealCustomerSection';
@@ -108,10 +107,7 @@ export default function App() {
               onOpenQuoteModal={handleOpenQuoteModal}
             />
 
-            {/* 4. 24/7 Emergency Leak Detection Callout Banner */}
-            <EmergencyBanner onOpenQuoteModal={handleOpenQuoteModal} />
-
-            {/* 5. Why Crown & 10-Year Workmanship Warranty */}
+            {/* 4. Why Crown & 10-Year Workmanship Warranty */}
             <WhyCrown onOpenQuoteModal={() => handleOpenQuoteModal()} />
 
             {/* 6. Materials, Systems & Specialty Work + Zero Job Exclusions */}
