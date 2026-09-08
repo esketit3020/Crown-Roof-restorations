@@ -43,6 +43,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { name: 'Why Crown', page: 'home' as const, sectionId: 'why-crown' },
     { name: 'Materials', page: 'home' as const, sectionId: 'materials' },
     { name: 'Before & After', page: 'home' as const, sectionId: 'showcase' },
+    { name: 'Reviews', page: 'home' as const, sectionId: 'reviews' },
     { name: 'FAQs', page: 'home' as const, sectionId: 'faq' },
   ];
 

@@ -1,4 +1,4 @@
-import { ServiceItem, FAQItem, IdealCustomerCategory, ProjectShowcase } from '../types';
+import { ServiceItem, FAQItem, IdealCustomerCategory, ProjectShowcase, CustomerReview } from '../types';
 
 export const BUSINESS_INFO = {
   name: 'Crown Roof Restorations',
@@ -469,5 +469,71 @@ export const BEFORE_AFTER_PROJECTS: ProjectShowcase[] = [
     beforeImage: 'https://images.unsplash.com/photo-1541888946425-d0fbb186c5f3?auto=format&fit=crop&w=800&q=80',
     afterImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80',
     warranty: '10-Year Workmanship Warranty',
+  },
+];
+
+export const CUSTOMER_REVIEWS: CustomerReview[] = [
+  {
+    id: 'rev-riley',
+    author: 'Riley Mckay',
+    reviewCount: '1 review',
+    date: 'a month ago',
+    rating: 5,
+    serviceMentioned: 'Full Roof Restoration',
+    content:
+      'I got a full roof restoration done by Mason from Crown Roof Restorations and I couldn’t be happier with the result. Mason was professional, reliable and did an amazing job from start to finish.\n\nThe roof looks brand new again and the quality of the workmanship is excellent. I would definitely recommend Mason and Crown Roof Restorations to anyone needing a roof repair or full restoration. I’ll definitely be using him again in the future.',
+    likesCount: 1,
+    badge: 'Verified Customer',
+  },
+  {
+    id: 'rev-adrian',
+    author: 'Adrian Seconnino',
+    reviewCount: '11 reviews',
+    date: 'a month ago',
+    rating: 5,
+    serviceMentioned: 'Roof Restoration',
+    content:
+      'Mason did a great job restoring my roof. He went over and beyond what was discussed and made sure I was happy before leaving. Highly recommended Mason and will definitely use him again.',
+    likesCount: 1,
+    badge: 'Local Guide',
+  },
+  {
+    id: 'rev-leeanne',
+    author: 'Leeanne Young',
+    reviewCount: '4 reviews · 1 photo',
+    date: 'a month ago',
+    rating: 5,
+    highlight: 'Great price',
+    serviceMentioned: 'Gutter Cleaning & Guard Removal',
+    content:
+      'I had my gutters cleaned by Crown Roof Restoration, and they did an awesome, professional job. It was a big job because grass was growing throughout the gutters due to the old gutter guard, which they removed. I definitely won’t be putting gutter guard back on.',
+    hasPhoto: true,
+    likesCount: 1,
+    badge: 'Verified Customer',
+  },
+  {
+    id: 'rev-kathi',
+    author: 'Kathi Hunt',
+    reviewCount: '1 review',
+    date: '4 weeks ago',
+    rating: 5,
+    highlight: 'Great price',
+    serviceMentioned: 'Two-Storey Gutter Cleaning',
+    content:
+      'Mason did a great job cleaning our difficult two storey gutters and left everything clean and tidy. Would highly recommend very professional and reliable.',
+    badge: 'Verified Customer',
+  },
+  {
+    id: 'rev-dylan',
+    author: 'Dylan P',
+    reviewCount: '1 review',
+    date: 'a month ago',
+    rating: 5,
+    highlight: 'Great price',
+    serviceMentioned: 'Roof Restoration',
+    content:
+      'Great experience with Crown Roof Restoration. Roof looks brand new. Thanks Mason!',
+    likesCount: 1,
+    badge: 'Verified Customer',
   },
 ];

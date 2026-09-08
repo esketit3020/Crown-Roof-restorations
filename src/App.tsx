@@ -8,6 +8,7 @@ import { WhyCrown } from './components/WhyCrown';
 import { MaterialsSection } from './components/MaterialsSection';
 import { IdealCustomerSection } from './components/IdealCustomerSection';
 import { BeforeAfterGallery } from './components/BeforeAfterGallery';
+import { CustomerReviewsSection } from './components/CustomerReviewsSection';
 import { FAQSection } from './components/FAQSection';
 import { Footer } from './components/Footer';
 import { QuoteCalculatorModal } from './components/QuoteCalculatorModal';
@@ -119,7 +120,10 @@ export default function App() {
             {/* 8. Before & After Showcase / Craftsmanship Proof */}
             <BeforeAfterGallery onOpenQuoteModal={handleOpenQuoteModal} />
 
-            {/* 9. Top 3 Customer Questions & Answers + Professional Assessment Banner */}
+            {/* 9. Verified Customer Reviews (Without Replies) */}
+            <CustomerReviewsSection onOpenQuoteModal={() => handleOpenQuoteModal()} />
+
+            {/* 10. Top 3 Customer Questions & Answers + Professional Assessment Banner */}
             <FAQSection onOpenQuoteModal={() => handleOpenQuoteModal()} />
           </>
         )}

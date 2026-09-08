@@ -51,3 +51,17 @@ export interface QuoteRequestFormData {
   urgency: string;
   notes: string;
 }
+
+export interface CustomerReview {
+  id: string;
+  author: string;
+  reviewCount: string;
+  date: string;
+  rating: number;
+  highlight?: string;
+  content: string;
+  serviceMentioned?: string;
+  hasPhoto?: boolean;
+  likesCount?: number;
+  badge?: string;
+}
