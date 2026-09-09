@@ -68,13 +68,6 @@ export const PriorityServices: React.FC<PriorityServicesProps> = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-black/25 to-black/40 pointer-events-none" />
 
-                {/* Badges on Image */}
-                <div className="absolute top-3.5 left-3.5 z-10">
-                  <span className="text-xs font-semibold text-[#FDE79D] bg-black/85 backdrop-blur-md px-3 py-1.5 rounded-lg border border-[#D4AF37]/40 shadow-md">
-                    {service.badge}
-                  </span>
-                </div>
-
                 {index === 2 && (
                   <div className="absolute top-3.5 right-3.5 z-10 bg-black/85 backdrop-blur-md border border-[#D4AF37]/50 text-[#FDE79D] font-bold text-[11px] uppercase tracking-wider py-1 px-3 rounded-full shadow-sm flex items-center gap-1.5">
                     <Clock className="w-3.5 h-3.5 text-[#D4AF37]" />

@@ -27,7 +27,6 @@ export const TOP_PRIORITY_SERVICES: ServiceItem[] = [
     name: 'Full Roof Restoration & Painting',
     category: 'tile-tin',
     isPriority: true,
-    badge: 'Top Priority #1',
     imageUrl: PRIORITY_SERVICE_IMAGES['full-roof-restoration'] || '/priority-restoration.jpg',
     tagline: 'Look brand new for a fraction of replacement cost.',
     description:
@@ -46,7 +45,6 @@ export const TOP_PRIORITY_SERVICES: ServiceItem[] = [
     name: 'Roof Repairs & Maintenance',
     category: 'tile-tin',
     isPriority: true,
-    badge: 'Top Priority #2',
     imageUrl: PRIORITY_SERVICE_IMAGES['roof-repairs'] || '/priority-repairs.jpg',
     tagline: 'Fast fixes for cracked tiles, mortar & storm wear.',
     description:
@@ -65,7 +63,6 @@ export const TOP_PRIORITY_SERVICES: ServiceItem[] = [
     name: 'Leak Detection & Fast Repairs',
     category: 'tile-tin',
     isPriority: true,
-    badge: 'Priority Service',
     imageUrl: PRIORITY_SERVICE_IMAGES['leak-detection-repairs'] || '/priority-leak.jpg',
     tagline: 'Find and stop roof leaks before damage spreads.',
     description:

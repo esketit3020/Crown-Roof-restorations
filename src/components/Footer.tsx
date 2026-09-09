@@ -79,7 +79,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             {/* Column 1: Priority Services */}
             <div className="space-y-4">
               <h4 className="font-cinzel text-sm font-bold text-white uppercase tracking-wider border-b border-[#D4AF37]/35 pb-2">
-                Top Priority Services
+                Core Services
               </h4>
               <ul className="space-y-2.5 text-xs">
                 {TOP_PRIORITY_SERVICES.map((s) => (
