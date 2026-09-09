@@ -9,6 +9,7 @@ export interface ServiceItem {
   materials?: string;
   iconName: string;
   badge?: string;
+  imageUrl?: string;
 }
 
 export interface FAQItem {
