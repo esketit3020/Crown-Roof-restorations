@@ -7,10 +7,9 @@ interface HeroProps {
 }
 
 const HERO_IMAGE_CANDIDATES = [
-  '/qwerq (2).jpg',
-  '/qwerq.jpg',
-  '/hero-roof.jpg',
+  '/hero.jpg',
   '/roof-after.jpg',
+  '/image.png',
 ];
 
 export const Hero: React.FC<HeroProps> = () => {
@@ -32,11 +31,11 @@ export const Hero: React.FC<HeroProps> = () => {
           src={currentHeroImg}
           alt="Restored roof by Crown Roof Restorations"
           onError={handleImageError}
-          className="w-full h-full object-cover object-center opacity-90 md:opacity-95 scale-105 transition-opacity duration-700"
+          className="w-full h-full object-cover object-center opacity-80 md:opacity-80 scale-105 transition-opacity duration-700"
         />
-        {/* Soft directional gradient: protects text contrast on left while keeping right roof bright & visible */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/20 md:from-black/85 md:via-black/40 md:to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/90" />
+        {/* Directional dark overlays: refined contrast for text with visible roof details */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-black/40 md:from-black/90 md:via-black/55 md:to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/90" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#D4AF37]/15 via-transparent to-transparent" />
       </div>
 
