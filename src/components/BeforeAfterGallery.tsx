@@ -20,7 +20,7 @@ export const BeforeAfterGallery: React.FC<BeforeAfterGalleryProps> = () => {
             <span>Interactive Comparison Showcase</span>
           </div>
           <h2 className="font-cinzel text-3xl sm:text-4xl font-bold text-white tracking-tight">
-            Full Roof Restoration: Before & After
+            Full Roof Restoration
           </h2>
           <p className="text-neutral-400 text-base">
             Drag the gold slider handle horizontally to reveal the complete transformation from weathered, porous tiles to our durable protective finish.
@@ -62,26 +62,9 @@ export const BeforeAfterGallery: React.FC<BeforeAfterGalleryProps> = () => {
                   <span>{currentProject.warranty}</span>
                 </div>
 
-                <h3 className="font-cinzel text-xl sm:text-2xl font-bold text-white mb-4">
+                <h3 className="font-cinzel text-xl sm:text-2xl font-bold text-white mb-2">
                   {currentProject.title}
                 </h3>
-
-                {/* Problem vs Solution breakdown */}
-                <div className="space-y-4 text-xs sm:text-sm">
-                  <div className="p-3.5 rounded-xl bg-black border border-neutral-800">
-                    <span className="text-neutral-400 font-bold block mb-1 text-xs uppercase tracking-wide">
-                      The Problem:
-                    </span>
-                    <p className="text-neutral-300 leading-relaxed">{currentProject.problem}</p>
-                  </div>
-
-                  <div className="p-3.5 rounded-xl bg-black border border-[#D4AF37]/35">
-                    <span className="text-[#D4AF37] font-bold block mb-1 text-xs uppercase tracking-wide">
-                      The Crown Solution:
-                    </span>
-                    <p className="text-neutral-300 leading-relaxed">{currentProject.solution}</p>
-                  </div>
-                </div>
               </div>
 
               {/* Action Button */}

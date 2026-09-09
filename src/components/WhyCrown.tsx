@@ -5,9 +5,10 @@ import { BUSINESS_INFO } from '../data/roofingData';
 
 interface WhyCrownProps {
   onOpenQuoteModal?: () => void;
+  onNavigateToFounder?: () => void;
 }
 
-export const WhyCrown: React.FC<WhyCrownProps> = () => {
+export const WhyCrown: React.FC<WhyCrownProps> = ({ onNavigateToFounder }) => {
   const pillars = [
     {
       icon: ShieldCheck,
@@ -126,17 +127,29 @@ export const WhyCrown: React.FC<WhyCrownProps> = () => {
         </div>
 
         {/* Bottom CTA bar */}
-        <div className="mt-14 text-center">
-          <p className="text-neutral-300 text-sm mb-4">
+        <div className="mt-14 text-center space-y-4">
+          <p className="text-neutral-300 text-sm">
             Want to see how we treat your roof? Get a free, transparent on-site inspection.
           </p>
-          <a
-            href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
-            className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm shadow-xl shadow-[#D4AF37]/20 active:scale-95 transition-all cursor-pointer border border-[#FDE79D]/40"
-          >
-            <Phone className="w-4 h-4 fill-black" />
-            <span>Call Mason for Free Inspection</span>
-          </a>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
+              className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm shadow-xl shadow-[#D4AF37]/20 active:scale-95 transition-all cursor-pointer border border-[#FDE79D]/40"
+            >
+              <Phone className="w-4 h-4 fill-black" />
+              <span>Call Mason for Free Inspection</span>
+            </a>
+
+            {onNavigateToFounder && (
+              <button
+                onClick={onNavigateToFounder}
+                className="inline-flex items-center gap-2 px-6 py-4 rounded-xl bg-[#141414] hover:bg-[#1E1E1E] text-white font-bold text-sm border border-[#D4AF37]/40 hover:border-[#D4AF37] transition-all cursor-pointer shadow-md group"
+              >
+                <span>Meet Mason — Founder Story</span>
+                <span className="text-[#D4AF37] group-hover:translate-x-1 transition-transform">→</span>
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </section>

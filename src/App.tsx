@@ -4,6 +4,7 @@ import { Hero } from './components/Hero';
 import { PriorityServices } from './components/PriorityServices';
 import { FullServicesTeaser } from './components/FullServicesTeaser';
 import { ServicesPage } from './components/ServicesPage';
+import { FounderPage } from './components/FounderPage';
 import { WhyCrown } from './components/WhyCrown';
 import { MaterialsSection } from './components/MaterialsSection';
 import { IdealCustomerSection } from './components/IdealCustomerSection';
@@ -15,9 +16,15 @@ import { Phone } from 'lucide-react';
 import { BUSINESS_INFO } from './data/roofingData';
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'services'>(() => {
-    if (typeof window !== 'undefined' && window.location.hash.includes('services')) {
-      return 'services';
+  const [currentPage, setCurrentPage] = useState<'home' | 'services' | 'founder'>(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash;
+      if (hash.includes('founder') || hash.includes('story') || hash.includes('mason')) {
+        return 'founder';
+      }
+      if (hash.includes('services')) {
+        return 'services';
+      }
     }
     return 'home';
   });
@@ -26,7 +33,10 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
-      if (hash.includes('services')) {
+      if (hash.includes('founder') || hash.includes('story') || hash.includes('mason')) {
+        setCurrentPage('founder');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (hash.includes('services')) {
         setCurrentPage('services');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
@@ -38,8 +48,12 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const handleNavigate = (page: 'home' | 'services', sectionId?: string) => {
-    if (page === 'services') {
+  const handleNavigate = (page: 'home' | 'services' | 'founder', sectionId?: string) => {
+    if (page === 'founder') {
+      setCurrentPage('founder');
+      window.location.hash = '#founder';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (page === 'services') {
       setCurrentPage('services');
       window.location.hash = '#services';
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -72,7 +86,13 @@ export default function App() {
 
       {/* Main Content: Conditional Page Rendering */}
       <main className="flex-grow">
-        {currentPage === 'services' ? (
+        {currentPage === 'founder' ? (
+          /* Dedicated Meet Mason Founder Story Page */
+          <FounderPage
+            onNavigateHome={() => handleNavigate('home')}
+            onNavigateToServices={() => handleNavigate('services')}
+          />
+        ) : currentPage === 'services' ? (
           /* Dedicated Full Services Directory Page */
           <ServicesPage
             onNavigateHome={() => handleNavigate('home')}
@@ -92,7 +112,9 @@ export default function App() {
             />
 
             {/* 4. Why Crown & 10-Year Workmanship Warranty */}
-            <WhyCrown />
+            <WhyCrown
+              onNavigateToFounder={() => handleNavigate('founder')}
+            />
 
             {/* 6. Materials, Systems & Specialty Work + Zero Job Exclusions */}
             <MaterialsSection />
@@ -100,7 +122,7 @@ export default function App() {
             {/* 7. Who We Serve: Ideal Customer Categories */}
             <IdealCustomerSection />
 
-            {/* 8. Before & After Showcase / Craftsmanship Proof */}
+            {/* 8. Full Roof Restoration Showcase / Craftsmanship Proof */}
             <BeforeAfterGallery />
 
             {/* 9. Verified Customer Reviews (Without Replies) */}

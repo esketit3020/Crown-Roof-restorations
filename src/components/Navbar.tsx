@@ -4,8 +4,8 @@ import { CrownLogo } from './CrownLogo';
 import { BUSINESS_INFO } from '../data/roofingData';
 
 interface NavbarProps {
-  currentPage?: 'home' | 'services';
-  onNavigate?: (page: 'home' | 'services', sectionId?: string) => void;
+  currentPage?: 'home' | 'services' | 'founder';
+  onNavigate?: (page: 'home' | 'services' | 'founder', sectionId?: string) => void;
   onOpenQuoteModal?: (preselectedService?: string) => void;
 }
 
@@ -24,7 +24,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLinkClick = (e: React.MouseEvent, page: 'home' | 'services', sectionId?: string) => {
+  const handleLinkClick = (e: React.MouseEvent, page: 'home' | 'services' | 'founder', sectionId?: string) => {
     e.preventDefault();
     setMobileMenuOpen(false);
     if (onNavigate) {
@@ -37,11 +37,12 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navLinks = [
     { name: 'Home', page: 'home' as const, sectionId: 'hero' },
+    { name: 'Founder Story', page: 'founder' as const },
     { name: 'Priority Services', page: 'home' as const, sectionId: 'priority-services' },
     { name: 'Full Services', page: 'services' as const, isHighlight: true },
     { name: 'Why Crown', page: 'home' as const, sectionId: 'why-crown' },
     { name: 'Materials', page: 'home' as const, sectionId: 'materials' },
-    { name: 'Before & After', page: 'home' as const, sectionId: 'showcase' },
+    { name: 'Full Roof Restoration', page: 'home' as const, sectionId: 'showcase' },
     { name: 'Reviews', page: 'home' as const, sectionId: 'reviews' },
     { name: 'FAQs', page: 'home' as const, sectionId: 'faq' },
   ];
@@ -109,10 +110,10 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Desktop Nav Items */}
           <div className="hidden lg:flex items-center gap-6 xl:gap-7 text-sm font-medium">
             {navLinks.map((link) => {
-              const isActive =
-                link.page === 'services'
-                  ? currentPage === 'services'
-                  : currentPage === 'home' && !link.isHighlight;
+              const isPageActive =
+                (link.page === 'services' && currentPage === 'services') ||
+                (link.page === 'founder' && currentPage === 'founder') ||
+                (link.page === 'home' && currentPage === 'home' && link.name === 'Home');
 
               return (
                 <button
@@ -123,7 +124,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                       ? currentPage === 'services'
                         ? 'bg-crown-gold-gradient text-black font-extrabold px-3 py-1.5 rounded-lg shadow-sm border border-[#FDE79D]/40'
                         : 'text-[#FDE79D] font-bold px-3 py-1.5 rounded-lg bg-[#D4AF37]/15 border border-[#D4AF37]/40 hover:bg-[#D4AF37]/25'
-                      : currentPage === 'home' && link.name === 'Home'
+                      : link.page === 'founder'
+                      ? currentPage === 'founder'
+                        ? 'text-[#FDE79D] font-bold border-b-2 border-[#D4AF37]'
+                        : 'text-neutral-300 hover:text-[#FDE79D]'
+                      : isPageActive
                       ? 'text-white font-semibold'
                       : 'text-neutral-300 hover:text-[#FDE79D]'
                   }`}
@@ -198,13 +203,15 @@ export const Navbar: React.FC<NavbarProps> = ({
                 className={`w-full text-left py-2.5 px-3 rounded-lg font-medium text-xs sm:text-sm flex items-center justify-between transition-colors ${
                   link.page === 'services' && currentPage === 'services'
                     ? 'bg-crown-gold-gradient text-black font-bold'
+                    : link.page === 'founder' && currentPage === 'founder'
+                    ? 'bg-[#D4AF37]/20 text-[#FDE79D] font-bold border border-[#D4AF37]/40'
                     : link.page === 'services'
                     ? 'text-[#FDE79D] bg-[#D4AF37]/15 border border-[#D4AF37]/30'
                     : 'text-neutral-200 hover:text-[#FDE79D] hover:bg-[#141414]'
                 }`}
               >
                 <span>{link.name}</span>
-                {link.page === 'services' && <ArrowRight className="w-3.5 h-3.5" />}
+                {(link.page === 'services' || link.page === 'founder') && <ArrowRight className="w-3.5 h-3.5" />}
               </button>
             ))}
             <div className="pt-2 space-y-2">

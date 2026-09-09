@@ -4,7 +4,7 @@ import { BUSINESS_INFO, ALL_SERVICES, TOP_PRIORITY_SERVICES } from '../data/roof
 import { Phone, Mail, MapPin, ShieldCheck, Clock, Award, ArrowRight, Facebook } from 'lucide-react';
 
 interface FooterProps {
-  onNavigate?: (page: 'home' | 'services', sectionId?: string) => void;
+  onNavigate?: (page: 'home' | 'services' | 'founder', sectionId?: string) => void;
   onOpenQuoteModal?: (serviceName?: string) => void;
 }
 
@@ -12,7 +12,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   const tileTinServices = ALL_SERVICES.filter((s) => s.category === 'tile-tin').slice(0, 7);
   const exteriorServices = ALL_SERVICES.filter((s) => s.category === 'exterior');
 
-  const handleNavigate = (page: 'home' | 'services', sectionId?: string) => {
+  const handleNavigate = (page: 'home' | 'services' | 'founder', sectionId?: string) => {
     if (onNavigate) {
       onNavigate(page, sectionId);
     } else if (sectionId) {
@@ -93,6 +93,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                     </a>
                   </li>
                 ))}
+                <li>
+                  <button
+                    onClick={() => handleNavigate('founder')}
+                    className="text-left text-[#FDE79D] hover:underline font-bold transition-colors cursor-pointer flex items-center gap-1.5"
+                  >
+                    <ArrowRight className="w-3 h-3 text-[#D4AF37]" />
+                    <span>Meet Mason (Founder Story)</span>
+                  </button>
+                </li>
                 <li>
                   <a href="#materials" className="text-neutral-400 hover:text-[#FDE79D] flex items-center gap-1.5">
                     <ArrowRight className="w-3 h-3 text-[#D4AF37]" />
