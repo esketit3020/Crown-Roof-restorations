@@ -26,18 +26,18 @@ export const Hero: React.FC<HeroProps> = () => {
 
   return (
     <section className="relative overflow-hidden bg-black pt-12 pb-20 md:pt-20 md:pb-32 border-b border-[#D4AF37]/25">
-      {/* Full Hero Background Image with Rich Cinematic Dark Overlays */}
+      {/* Full Hero Background Image with High Visibility & Balanced Overlays */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img
           src={currentHeroImg}
           alt="Restored roof by Crown Roof Restorations"
           onError={handleImageError}
-          className="w-full h-full object-cover object-center opacity-55 md:opacity-60 scale-105 transition-opacity duration-700"
+          className="w-full h-full object-cover object-center opacity-90 md:opacity-95 scale-105 transition-opacity duration-700"
         />
-        {/* Dark directional gradient overlays for pristine text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/80" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#D4AF37]/15 via-transparent to-black/60" />
+        {/* Soft directional gradient: protects text contrast on left while keeping right roof bright & visible */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/20 md:from-black/85 md:via-black/40 md:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/90" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#D4AF37]/15 via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,7 +66,7 @@ export const Hero: React.FC<HeroProps> = () => {
           </div>
 
           {/* Main Headline */}
-          <h1 className="font-cinzel text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.15] max-w-4xl">
+          <h1 className="font-cinzel text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.15] max-w-4xl drop-shadow-[0_2px_14px_rgba(0,0,0,0.9)]">
             We Don’t Just Restore Roofs —{' '}
             <span className="text-crown-gold-gradient block sm:inline">
               We Restore Them Like They’re Our Own.
@@ -74,7 +74,7 @@ export const Hero: React.FC<HeroProps> = () => {
           </h1>
 
           {/* Core Value Proposition Paragraph */}
-          <p className="text-neutral-200 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl">
+          <p className="text-neutral-100 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
             With hands-on experience, quality products, attention to detail and pride in every job,{' '}
             <strong className="text-white font-semibold">Crown Roof Restorations</strong> is built around doing the job properly and putting our name behind the work.
           </p>
