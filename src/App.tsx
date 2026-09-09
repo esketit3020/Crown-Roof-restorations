@@ -149,7 +149,7 @@ export default function App() {
           className="w-full py-3.5 px-4 rounded-xl bg-crown-gold-gradient text-black font-extrabold text-sm shadow-xl active:scale-95 flex items-center justify-center gap-2.5 border border-[#FDE79D]/40 cursor-pointer"
         >
           <Phone className="w-4 h-4 fill-black" />
-          <span>CALL MASON NOW</span>
+          <span>CALL FOR FREE QUOTE</span>
         </a>
       </aside>
     </div>

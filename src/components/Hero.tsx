@@ -95,7 +95,7 @@ export const Hero: React.FC<HeroProps> = () => {
             </div>
             <div className="flex items-center gap-2.5 bg-black/60 backdrop-blur-md px-3.5 py-2.5 rounded-xl border border-[#D4AF37]/30 shadow">
               <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0" />
-              <span className="font-medium">Free On-Site Assessment</span>
+              <span className="font-medium">Free Quote</span>
             </div>
           </div>
 

@@ -218,7 +218,7 @@ export const CustomerReviewsSection: React.FC<CustomerReviewsSectionProps> = () 
               Ready for Your Roof to Look Brand New?
             </h3>
             <p className="text-neutral-400 text-sm max-w-xl">
-              Mason provides free on-site inspections, upfront itemised quotes, and our 10-Year Workmanship Warranty.
+              Mason provides free quotes, upfront itemised pricing, and our 10-Year Workmanship Warranty.
             </p>
           </div>
 

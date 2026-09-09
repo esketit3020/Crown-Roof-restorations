@@ -189,7 +189,7 @@ export const FounderPage: React.FC<FounderPageProps> = ({
                   </div>
                   <div className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
-                    <span>Free on-site roof inspection & honest assessment</span>
+                    <span>Free quote & honest assessment</span>
                   </div>
                 </div>
 
@@ -256,7 +256,7 @@ export const FounderPage: React.FC<FounderPageProps> = ({
           </h2>
 
           <p className="text-neutral-300 text-sm sm:text-base max-w-2xl mx-auto">
-            Experience the difference of working with a tradesman who puts his name and future behind every roof. Contact Mason today for a free, honest on-site quote.
+            Experience the difference of working with a tradesman who puts his name and future behind every roof. Contact Mason today for a free, honest quote.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">

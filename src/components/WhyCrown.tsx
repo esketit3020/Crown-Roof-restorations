@@ -129,7 +129,7 @@ export const WhyCrown: React.FC<WhyCrownProps> = ({ onNavigateToFounder }) => {
         {/* Bottom CTA bar */}
         <div className="mt-14 text-center space-y-4">
           <p className="text-neutral-300 text-sm">
-            Want to see how we treat your roof? Get a free, transparent on-site inspection.
+            Want to see how we treat your roof? Get a free quote today.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a
@@ -137,7 +137,7 @@ export const WhyCrown: React.FC<WhyCrownProps> = ({ onNavigateToFounder }) => {
               className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm shadow-xl shadow-[#D4AF37]/20 active:scale-95 transition-all cursor-pointer border border-[#FDE79D]/40"
             >
               <Phone className="w-4 h-4 fill-black" />
-              <span>Call Mason for Free Inspection</span>
+              <span>Call Mason for a Free Quote</span>
             </a>
 
             {onNavigateToFounder && (

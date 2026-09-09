@@ -59,7 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               LEAK DETECTION & REPAIRS
             </span>
             <span className="hidden sm:inline text-neutral-300 text-[11px]">
-              Prompt inspections & repairs across Melbourne and surrounding suburbs
+              Prompt service & repairs across Melbourne and surrounding suburbs
             </span>
           </div>
 
@@ -221,7 +221,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 className="w-full py-3.5 bg-crown-gold-gradient text-black font-extrabold rounded-xl text-center text-xs sm:text-sm tracking-wider uppercase shadow-md shadow-[#D4AF37]/20 flex items-center justify-center gap-2 border border-[#FDE79D]/40"
               >
                 <Phone className="w-4 h-4 fill-black" />
-                <span>CALL MASON</span>
+                <span>CALL FOR FREE QUOTE</span>
               </a>
 
               <a

@@ -341,7 +341,7 @@ export const TOP_CUSTOMER_QUESTIONS: FAQItem[] = [
     id: 'faq-1',
     question: 'How much will my roof restoration cost?',
     answer:
-      'Every roof is different, so we provide a free inspection and quote based on the size, condition and work required. Our quotes are upfront and clearly outline what is included, including labour and materials.',
+      'Every roof is different, so we provide a free quote based on the size, condition and work required. Our quotes are upfront and clearly outline what is included, including labour and materials.',
     tip: 'No hidden surprise fees. We walk the roof and provide transparent pricing before any work starts.',
   },
   {

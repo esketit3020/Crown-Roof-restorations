@@ -50,14 +50,6 @@ export const PriorityServices: React.FC<PriorityServicesProps> = () => {
                   : 'bg-[#0D0D0D] border-[#D4AF37]/25 hover:border-[#D4AF37]/50 shadow-lg'
               }`}
             >
-              {/* Highlight ribbon for Top Priority #1 */}
-              {index === 0 && (
-                <div className="absolute -top-3.5 left-6 bg-crown-gold-gradient text-black font-extrabold text-[11px] uppercase tracking-wider py-1 px-3.5 rounded-full shadow-md flex items-center gap-1.5 border border-[#FDE79D]/50">
-                  <Sparkles className="w-3.5 h-3.5 fill-black" />
-                  <span>Most Popular Rejuvenation</span>
-                </div>
-              )}
-
               {index === 2 && (
                 <div className="absolute -top-3.5 left-6 bg-[#D4AF37]/20 border border-[#D4AF37]/50 text-[#FDE79D] font-bold text-[11px] uppercase tracking-wider py-1 px-3.5 rounded-full shadow-sm flex items-center gap-1.5">
                   <Clock className="w-3.5 h-3.5" />

@@ -333,7 +333,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               className="w-full sm:w-auto px-8 py-4 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm shadow-xl shadow-[#D4AF37]/20 active:scale-95 transition-all flex items-center justify-center gap-2 border border-[#FDE79D]/40"
             >
               <Phone className="w-4 h-4 fill-black" />
-              <span>Call Mason for Free Roof Assessment</span>
+              <span>Call Mason for a Free Quote</span>
             </a>
           </div>
         </div>

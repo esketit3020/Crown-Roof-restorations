@@ -77,7 +77,7 @@ export const BeforeAfterGallery: React.FC<BeforeAfterGalleryProps> = () => {
                   <span>Call Mason for a Free Roof Quote</span>
                 </a>
                 <p className="text-[11px] text-center text-neutral-400">
-                  Direct phone call with Mason — get instant advice or schedule a free on-site roof inspection.
+                  Direct phone call with Mason — get instant advice or request a free quote.
                 </p>
               </div>
             </div>

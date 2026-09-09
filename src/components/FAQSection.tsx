@@ -90,7 +90,7 @@ export const FAQSection: React.FC<FAQSectionProps> = () => {
             Not Sure What Your Roof Needs?
           </h3>
           <p className="text-neutral-300 text-base max-w-xl mx-auto leading-relaxed">
-            Contact <strong className="text-white">Crown Roof Restorations</strong> today for a free quote and professional roof assessment. We will inspect your roof and provide clear, honest advice on what is actually required.
+            Contact <strong className="text-white">Crown Roof Restorations</strong> today for a free quote. We will assess your roof and provide clear, honest advice on what is actually required.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
@@ -99,7 +99,7 @@ export const FAQSection: React.FC<FAQSectionProps> = () => {
               className="w-full sm:w-auto px-8 py-4 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm shadow-xl shadow-[#D4AF37]/25 active:scale-95 transition-all flex items-center justify-center gap-2 border border-[#FDE79D]/40 cursor-pointer"
             >
               <Phone className="w-4 h-4 fill-black" />
-              <span>Call Mason for Free Advice & Quote</span>
+              <span>Call Mason for a Free Quote</span>
             </a>
           </div>
         </div>

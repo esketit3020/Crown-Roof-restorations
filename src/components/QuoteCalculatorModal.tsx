@@ -21,7 +21,7 @@ export const QuoteCalculatorModal: React.FC<QuoteCalculatorModalProps> = ({
   const [roofType, setRoofType] = useState('Concrete Tile');
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [propertyType, setPropertyType] = useState('Residential Home');
-  const [urgency, setUrgency] = useState('Standard Inspection');
+  const [urgency, setUrgency] = useState('Standard');
   const [formData, setFormData] = useState({
     fullName: '',
     phone: '',
@@ -77,7 +77,7 @@ export const QuoteCalculatorModal: React.FC<QuoteCalculatorModalProps> = ({
   const urgencyLevels = [
     { label: 'Urgent / Active Leak (Within 24 hrs)', value: 'Urgent Leak', isAlert: true },
     { label: 'Prompt (Within 2-3 days)', value: 'Prompt', isAlert: false },
-    { label: 'Standard Inspection (This week)', value: 'Standard Inspection', isAlert: false },
+    { label: 'Standard (This week)', value: 'Standard', isAlert: false },
   ];
 
   return (
@@ -90,7 +90,7 @@ export const QuoteCalculatorModal: React.FC<QuoteCalculatorModalProps> = ({
             <div>
               <div className="flex items-center gap-2 text-[#D4AF37] text-xs font-bold uppercase tracking-wider mb-0.5">
                 <ShieldCheck className="w-3.5 h-3.5" />
-                <span>Free Roof Assessment & Quote</span>
+                <span>Free Quote</span>
               </div>
               <h3 className="font-cinzel text-xl sm:text-2xl font-bold text-white leading-tight">
                 The Crown Roof Estimate
@@ -117,11 +117,11 @@ export const QuoteCalculatorModal: React.FC<QuoteCalculatorModalProps> = ({
 
               <div className="space-y-2">
                 <h4 className="font-cinzel text-2xl font-bold text-white">
-                  Assessment Request Received!
+                  Quote Request Received!
                 </h4>
                 <p className="text-neutral-300 text-sm max-w-md mx-auto leading-relaxed">
-                  Thank you, <strong className="text-white">{formData.fullName || 'valued homeowner'}</strong>. Our senior roofing inspector will contact you shortly at{' '}
-                  <strong className="text-[#FDE79D]">{formData.phone || 'your phone'}</strong> to confirm your free inspection time.
+                  Thank you, <strong className="text-white">{formData.fullName || 'valued homeowner'}</strong>. Mason will contact you shortly at{' '}
+                  <strong className="text-[#FDE79D]">{formData.phone || 'your phone'}</strong> to confirm your free quote.
                 </p>
               </div>
 
@@ -132,7 +132,7 @@ export const QuoteCalculatorModal: React.FC<QuoteCalculatorModalProps> = ({
                   Our Upfront Quote Promise:
                 </p>
                 <p className="italic text-neutral-400">
-                  "Every roof is different, so we provide a free inspection and quote based on the size, condition and work required. Our quotes are upfront and clearly outline what is included, including labour and materials."
+                  "Every roof is different, so we provide a free quote based on the size, condition and work required. Our quotes are upfront and clearly outline what is included, including labour and materials."
                 </p>
                 <div className="pt-2 text-[11px] text-[#FDE79D] font-medium">
                   ✓ Backed by our 10-Year Workmanship Warranty
@@ -422,7 +422,7 @@ export const QuoteCalculatorModal: React.FC<QuoteCalculatorModalProps> = ({
                       type="submit"
                       className="px-7 py-3 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm shadow-lg shadow-[#D4AF37]/25 hover:brightness-105 active:scale-95 transition-all cursor-pointer border border-[#FDE79D]/40"
                     >
-                      Request Free Assessment & Quote
+                      Request Free Quote
                     </button>
                   </div>
                 </div>
