@@ -23,7 +23,7 @@ export const BeforeAfterGallery: React.FC<BeforeAfterGalleryProps> = () => {
             Full Roof Restoration
           </h2>
           <p className="text-neutral-400 text-base">
-            Drag the gold slider handle horizontally to reveal the complete transformation from weathered, porous tiles to our durable protective finish.
+            Drag the gold slider handle horizontally to reveal the complete transformation from weathered, porous tiles to a fully restored roof.
           </p>
         </div>
 

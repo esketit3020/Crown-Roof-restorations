@@ -13,7 +13,7 @@ export const BUSINESS_INFO = {
   reviewCount: '5 Google Reviews',
   facebookUrl: 'https://www.facebook.com/profile.php?id=61591616468916',
   coreValueProposition:
-    'We don’t just restore roofs — we restore them like they’re our own. With hands-on experience from a younger age, quality products, attention to detail and pride in every job, Crown Roof Restorations is built around doing the job properly and putting our name behind the work.',
+    'We don’t just restore roofs — we restore them like they’re our own. With hands-on experience, quality products, attention to detail and pride in every job, Crown Roof Restorations is built around doing the job properly and putting our name behind the work.',
   whyCrownSummary:
     'Whether your roof is tile or tin, Crown Roof Restorations provides complete roofing solutions from repairs and maintenance through to full restorations. We use quality products, take pride in our workmanship and treat every roof as if it were our own.',
   materialsStatement:

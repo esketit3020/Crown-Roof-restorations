@@ -128,7 +128,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
         <div className="absolute top-4 left-4 z-20 pointer-events-none">
           <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-crown-gold-gradient text-black font-extrabold text-xs tracking-wider border border-[#FDE79D]/50 shadow-lg backdrop-blur-md">
             <Sparkles className="w-3.5 h-3.5 fill-black" />
-            <span>AFTER (THE CROWN FINISH)</span>
+            <span>AFTER</span>
           </span>
         </div>
 

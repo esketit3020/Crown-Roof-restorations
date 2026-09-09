@@ -21,7 +21,7 @@ export const WhyCrown: React.FC<WhyCrownProps> = ({ onNavigateToFounder }) => {
       icon: HeartHandshake,
       title: 'Treated Like Our Own Roof',
       description:
-        'With hands-on experience from a younger age and true trade pride, we don’t cut corners on bedding mortar, pointing depth, primer coats, or cleanup.',
+        'With hands-on experience and true trade pride, we don’t cut corners on bedding mortar, pointing depth, primer coats, or cleanup.',
       highlight: 'Personal Pride',
     },
     {

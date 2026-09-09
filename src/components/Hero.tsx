@@ -75,7 +75,7 @@ export const Hero: React.FC<HeroProps> = () => {
 
           {/* Core Value Proposition Paragraph */}
           <p className="text-neutral-200 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl">
-            With hands-on experience from a younger age, quality products, attention to detail and pride in every job,{' '}
+            With hands-on experience, quality products, attention to detail and pride in every job,{' '}
             <strong className="text-white font-semibold">Crown Roof Restorations</strong> is built around doing the job properly and putting our name behind the work.
           </p>
 
