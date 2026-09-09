@@ -75,7 +75,7 @@ export const IdealCustomerSection: React.FC<IdealCustomerSectionProps> = () => {
                   className="w-full py-2.5 px-3 rounded-xl bg-[#141414] hover:bg-crown-gold-gradient hover:text-black text-white text-xs font-bold border border-[#D4AF37]/30 hover:border-[#FDE79D]/40 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm group"
                 >
                   <Phone className="w-3.5 h-3.5 text-[#D4AF37] group-hover:text-black transition-colors" />
-                  <span>Call to Inquire: {BUSINESS_INFO.phone}</span>
+                  <span>Call to Inquire</span>
                 </a>
               </div>
             </div>

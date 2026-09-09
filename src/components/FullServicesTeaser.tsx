@@ -74,7 +74,7 @@ export const FullServicesTeaser: React.FC<FullServicesTeaserProps> = ({
                   className="px-5 py-3.5 rounded-xl bg-[#141414] hover:bg-[#1F1F1F] text-white font-bold text-sm border border-[#D4AF37]/30 hover:border-[#D4AF37]/60 transition-all flex items-center justify-center gap-2"
                 >
                   <Phone className="w-4 h-4 text-[#D4AF37]" />
-                  <span>Call: {BUSINESS_INFO.phone}</span>
+                  <span>Call Mason</span>
                 </a>
               </div>
             </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { CrownLogo } from './CrownLogo';
 import { BUSINESS_INFO, ALL_SERVICES, TOP_PRIORITY_SERVICES } from '../data/roofingData';
-import { Phone, Mail, MapPin, ShieldCheck, Clock, Award, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, ShieldCheck, Clock, Award, ArrowRight, Facebook } from 'lucide-react';
 
 interface FooterProps {
   onNavigate?: (page: 'home' | 'services', sectionId?: string) => void;
@@ -58,6 +58,19 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   Backed by quality products & pride in every job
                 </span>
               </div>
+            </div>
+
+            {/* Social Connection Link */}
+            <div className="pt-1">
+              <a
+                href={BUSINESS_INFO.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-[#141414] hover:bg-[#1E1E1E] text-white hover:text-[#FDE79D] border border-[#D4AF37]/35 hover:border-[#D4AF37] transition-all text-xs font-semibold shadow-md group"
+              >
+                <Facebook className="w-4 h-4 text-[#1877F2] group-hover:scale-110 transition-transform" />
+                <span>Follow Crown on Facebook</span>
+              </a>
             </div>
           </div>
 
@@ -155,6 +168,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   <span>{BUSINESS_INFO.address}</span>
                 </div>
 
+                <a
+                  href={BUSINESS_INFO.facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 text-neutral-300 hover:text-[#FDE79D] transition-colors group pt-1"
+                >
+                  <Facebook className="w-4 h-4 text-[#1877F2] shrink-0 group-hover:scale-110 transition-transform" />
+                  <span>Facebook Profile</span>
+                </a>
+
                 <div className="pt-2">
                   <a
                     href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
@@ -176,6 +199,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <span>Tile & Tin Specialists</span>
             <span>Residential & Commercial</span>
             <span>10-Year Workmanship Warranty</span>
+            <a
+              href={BUSINESS_INFO.facebookUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-neutral-400 hover:text-[#1877F2] transition-colors"
+            >
+              <Facebook className="w-3.5 h-3.5 text-[#1877F2]" />
+              <span>Facebook</span>
+            </a>
             <a href="#root" className="text-[#D4AF37] hover:underline">
               Back to Top ↑
             </a>

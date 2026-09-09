@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, ShieldCheck, Heart, CheckCircle2, ArrowRight, Phone, MessageSquareQuote, ThumbsUp } from 'lucide-react';
+import { Star, ShieldCheck, Heart, CheckCircle2, ArrowRight, Phone, MessageSquareQuote, ThumbsUp, Facebook } from 'lucide-react';
 import { CUSTOMER_REVIEWS, BUSINESS_INFO } from '../data/roofingData';
 
 interface CustomerReviewsSectionProps {
@@ -31,15 +31,32 @@ export const CustomerReviewsSection: React.FC<CustomerReviewsSectionProps> = () 
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="space-y-3 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/35 text-[#FDE79D] text-xs font-bold uppercase tracking-wider">
-              <MessageSquareQuote className="w-3.5 h-3.5 text-[#D4AF37]" />
-              <span>Verified Customer Experiences</span>
+              <svg className="w-4 h-4" viewBox="0 0 24 24">
+                <path
+                  fill="#EA4335"
+                  d="M12 5c1.54 0 2.94.55 4.04 1.45l3.03-3.03C17.24 1.72 14.77 1 12 1 7.42 1 3.48 3.58 1.5 7.34l3.71 2.88C6.1 7.24 8.79 5 12 5z"
+                />
+                <path
+                  fill="#4285F4"
+                  d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58l3.7 2.87c2.16-1.99 3.72-4.93 3.72-8.69z"
+                />
+                <path
+                  fill="#FBBC05"
+                  d="M5.21 14.78c-.24-.72-.38-1.49-.38-2.28s.14-1.56.38-2.28L1.5 7.34C.55 9.24 0 11.36 0 12.5s.55 3.26 1.5 5.16l3.71-2.88z"
+                />
+                <path
+                  fill="#34A853"
+                  d="M12 23c3.24 0 5.95-1.08 7.93-2.91l-3.7-2.87c-1.08.72-2.45 1.16-4.23 1.16-3.21 0-5.9-2.24-6.79-5.22L1.5 16.04C3.48 19.8 7.42 23 12 23z"
+                />
+              </svg>
+              <span>Verified Google Reviews (5 Total)</span>
             </div>
             <h2 className="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
-              Real Reviews from{' '}
-              <span className="text-crown-gold-gradient">Melbourne Homeowners</span>
+              5 Google Reviews —{' '}
+              <span className="text-crown-gold-gradient">100% 5.0 Star Rating</span>
             </h2>
             <p className="text-neutral-400 text-sm sm:text-base leading-relaxed">
-              Read genuine customer feedback for Mason and the team at Crown Roof Restorations.
+              Read all 5 authentic customer reviews for Mason and Crown Roof Restorations on Google.
               Hands-on workmanship, transparent upfront pricing, and unmatched attention to detail.
             </p>
           </div>
@@ -48,24 +65,24 @@ export const CustomerReviewsSection: React.FC<CustomerReviewsSectionProps> = () 
           <div className="shrink-0 bg-black/80 border border-[#D4AF37]/35 rounded-2xl p-4 sm:p-5 flex items-center gap-5 backdrop-blur-md shadow-xl">
             <div className="text-center border-r border-[#D4AF37]/25 pr-5">
               <span className="text-3xl sm:text-4xl font-extrabold text-white leading-none block">
-                {BUSINESS_INFO.rating}
+                5.0
               </span>
               <div className="flex text-[#D4AF37] justify-center mt-1.5 gap-0.5">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-[#D4AF37]" />
                 ))}
               </div>
-              <span className="text-[11px] text-neutral-400 mt-1 block">Google Rating</span>
+              <span className="text-[11px] text-neutral-400 mt-1 block">5 Google Reviews</span>
             </div>
 
-            <div className="space-y-1 text-xs">
-              <div className="flex items-center gap-1.5 text-white font-semibold">
+            <div className="space-y-1.5 text-xs">
+              <div className="flex items-center gap-1.5 text-white font-bold">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37]" />
-                <span>100% 5-Star Reviews</span>
+                <span>5 out of 5 Stars (100%)</span>
               </div>
               <div className="flex items-center gap-1.5 text-neutral-300">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37]" />
-                <span>Owner-Operated Quality</span>
+                <span>Owner-Operated by Mason</span>
               </div>
               <div className="flex items-center gap-1.5 text-neutral-300">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37]" />
@@ -85,7 +102,7 @@ export const CustomerReviewsSection: React.FC<CustomerReviewsSectionProps> = () 
                 : 'bg-black/60 text-neutral-300 hover:text-white border border-neutral-800'
             }`}
           >
-            All Reviews ({CUSTOMER_REVIEWS.length})
+            All 5 Google Reviews
           </button>
           <button
             onClick={() => setFilter('restorations')}
@@ -95,7 +112,7 @@ export const CustomerReviewsSection: React.FC<CustomerReviewsSectionProps> = () 
                 : 'bg-black/60 text-neutral-300 hover:text-white border border-neutral-800'
             }`}
           >
-            Roof Restorations
+            Roof Restorations (3)
           </button>
           <button
             onClick={() => setFilter('gutters')}
@@ -105,7 +122,7 @@ export const CustomerReviewsSection: React.FC<CustomerReviewsSectionProps> = () 
                 : 'bg-black/60 text-neutral-300 hover:text-white border border-neutral-800'
             }`}
           >
-            Gutters & Maintenance
+            Gutters & Maintenance (2)
           </button>
         </div>
 
@@ -208,10 +225,20 @@ export const CustomerReviewsSection: React.FC<CustomerReviewsSectionProps> = () 
           <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
             <a
               href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
-              className="px-7 py-4 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm tracking-wide shadow-xl shadow-[#D4AF37]/20 flex items-center gap-2 cursor-pointer transition-all active:scale-95 border border-[#FDE79D]/40"
+              className="w-full sm:w-auto px-7 py-4 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm tracking-wide shadow-xl shadow-[#D4AF37]/20 flex items-center justify-center gap-2 cursor-pointer transition-all active:scale-95 border border-[#FDE79D]/40"
             >
               <Phone className="w-4 h-4 fill-black" />
-              <span>CALL MASON FOR A QUOTE: {BUSINESS_INFO.phone}</span>
+              <span>CALL MASON</span>
+            </a>
+
+            <a
+              href={BUSINESS_INFO.facebookUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-5 py-4 rounded-xl bg-[#141414] hover:bg-[#1E1E1E] text-white hover:text-[#1877F2] font-bold text-sm tracking-wide border border-[#D4AF37]/35 hover:border-[#1877F2]/50 shadow-lg flex items-center justify-center gap-2 transition-all group"
+            >
+              <Facebook className="w-4 h-4 text-[#1877F2] group-hover:scale-110 transition-transform" />
+              <span>VIEW ON FACEBOOK</span>
             </a>
           </div>
         </div>

@@ -34,7 +34,7 @@ export interface ProjectShowcase {
   location: string;
   problem: string;
   solution: string;
-  roofType: 'Concrete Tile' | 'Terracotta Tile' | 'Colorbond / Tin';
+  roofType: 'Concrete Tile' | 'Terracotta Tile' | 'Colorbond / Tin' | 'Concrete Tile & Tin';
   beforeImage: string;
   afterImage: string;
   warranty: string;

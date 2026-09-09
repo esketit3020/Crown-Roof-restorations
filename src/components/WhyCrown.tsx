@@ -135,7 +135,7 @@ export const WhyCrown: React.FC<WhyCrownProps> = () => {
             className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm shadow-xl shadow-[#D4AF37]/20 active:scale-95 transition-all cursor-pointer border border-[#FDE79D]/40"
           >
             <Phone className="w-4 h-4 fill-black" />
-            <span>Call Mason For Free Inspection: {BUSINESS_INFO.phone}</span>
+            <span>Call Mason for Free Inspection</span>
           </a>
         </div>
       </div>

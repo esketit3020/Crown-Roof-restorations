@@ -150,7 +150,7 @@ export const QuoteCalculatorModal: React.FC<QuoteCalculatorModalProps> = ({
                   href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
                   className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#141414] hover:bg-[#1F1F1F] text-white font-semibold text-sm border border-[#D4AF37]/30 hover:border-[#D4AF37]/60"
                 >
-                  Call Now: {BUSINESS_INFO.phone}
+                  Call Now
                 </a>
               </div>
             </div>

@@ -99,7 +99,7 @@ export const FAQSection: React.FC<FAQSectionProps> = () => {
               className="w-full sm:w-auto px-8 py-4 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm shadow-xl shadow-[#D4AF37]/25 active:scale-95 transition-all flex items-center justify-center gap-2 border border-[#FDE79D]/40 cursor-pointer"
             >
               <Phone className="w-4 h-4 fill-black" />
-              <span>Call Mason For Free Advice & Quote: {BUSINESS_INFO.phone}</span>
+              <span>Call Mason for Free Advice & Quote</span>
             </a>
           </div>
         </div>

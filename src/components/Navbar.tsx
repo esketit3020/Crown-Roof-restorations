@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, ShieldCheck, Clock, Menu, X, ArrowRight } from 'lucide-react';
+import { Phone, ShieldCheck, Clock, Menu, X, ArrowRight, Facebook } from 'lucide-react';
 import { CrownLogo } from './CrownLogo';
 import { BUSINESS_INFO } from '../data/roofingData';
 
@@ -62,18 +62,28 @@ export const Navbar: React.FC<NavbarProps> = ({
             </span>
           </div>
 
-          {/* Right: Workmanship Warranty & Call */}
+          {/* Right: Workmanship Warranty, Facebook & Call */}
           <div className="flex items-center gap-4 text-neutral-200">
             <div className="hidden md:flex items-center gap-1.5 text-[#FDE79D]">
               <ShieldCheck className="w-4 h-4 text-[#D4AF37]" />
               <span className="font-medium">10-Year Workmanship Warranty</span>
             </div>
             <a
+              href={BUSINESS_INFO.facebookUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-neutral-300 hover:text-[#1877F2] font-semibold transition-colors group"
+              title="Follow Crown Roof Restorations on Facebook"
+            >
+              <Facebook className="w-3.5 h-3.5 text-[#1877F2] group-hover:scale-110 transition-transform" />
+              <span className="hidden sm:inline text-xs">Facebook</span>
+            </a>
+            <a
               href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
               className="flex items-center gap-1.5 text-white hover:text-[#FDE79D] font-semibold transition-colors group"
             >
               <Phone className="w-3.5 h-3.5 text-[#D4AF37] group-hover:rotate-12 transition-transform" />
-              <span>Call: {BUSINESS_INFO.phone}</span>
+              <span>Call</span>
             </a>
           </div>
         </div>
@@ -144,7 +154,18 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="relative group overflow-hidden rounded-xl px-5 py-2.5 bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-xs sm:text-sm tracking-wider shadow-lg shadow-[#D4AF37]/20 active:scale-95 transition-all flex items-center gap-2 cursor-pointer border border-[#FDE79D]/40"
             >
               <Phone className="w-4 h-4 fill-black group-hover:rotate-12 transition-transform" />
-              <span>CALL: {BUSINESS_INFO.phone}</span>
+              <span>CALL</span>
+            </a>
+
+            <a
+              href={BUSINESS_INFO.facebookUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-xl bg-[#141414] hover:bg-[#1E1E1E] text-white hover:text-[#1877F2] border border-[#D4AF37]/30 hover:border-[#1877F2]/50 shadow transition-all group"
+              title="Follow Crown Roof Restorations on Facebook"
+              aria-label="Follow Crown Roof Restorations on Facebook"
+            >
+              <Facebook className="w-4 h-4 text-[#1877F2] group-hover:scale-110 transition-transform" />
             </a>
           </div>
 
@@ -186,14 +207,25 @@ export const Navbar: React.FC<NavbarProps> = ({
                 {link.page === 'services' && <ArrowRight className="w-3.5 h-3.5" />}
               </button>
             ))}
-            <div className="pt-2">
+            <div className="pt-2 space-y-2">
               <a
                 href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full py-3.5 bg-crown-gold-gradient text-black font-extrabold rounded-xl text-center text-xs sm:text-sm tracking-wider uppercase shadow-md shadow-[#D4AF37]/20 flex items-center justify-center gap-2 border border-[#FDE79D]/40"
               >
                 <Phone className="w-4 h-4 fill-black" />
-                <span>CALL MASON: {BUSINESS_INFO.phone}</span>
+                <span>CALL MASON</span>
+              </a>
+
+              <a
+                href={BUSINESS_INFO.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full py-2.5 px-3 rounded-xl bg-[#141414] text-white hover:text-[#1877F2] font-semibold text-xs flex items-center justify-center gap-2 border border-[#D4AF37]/30 transition-colors"
+              >
+                <Facebook className="w-4 h-4 text-[#1877F2]" />
+                <span>Follow Crown on Facebook</span>
               </a>
             </div>
           </div>

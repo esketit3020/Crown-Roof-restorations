@@ -119,7 +119,7 @@ export const PriorityServices: React.FC<PriorityServicesProps> = () => {
                   }`}
                 >
                   <Phone className="w-4 h-4" />
-                  <span>Call to Book: {BUSINESS_INFO.phone}</span>
+                  <span>Call to Book</span>
                 </a>
               </div>
             </div>
@@ -142,7 +142,7 @@ export const PriorityServices: React.FC<PriorityServicesProps> = () => {
             className="shrink-0 px-7 py-3.5 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm transition-all shadow-lg whitespace-nowrap cursor-pointer border border-[#FDE79D]/40 flex items-center gap-2 active:scale-95"
           >
             <Phone className="w-4 h-4 fill-black" />
-            <span>Call Mason: {BUSINESS_INFO.phone}</span>
+            <span>Call Mason</span>
           </a>
         </div>
       </div>

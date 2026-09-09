@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BEFORE_AFTER_PROJECTS, BUSINESS_INFO } from '../data/roofingData';
-import { ShieldCheck, ArrowRight, Sparkles, SlidersHorizontal, Phone } from 'lucide-react';
+import { ShieldCheck, SlidersHorizontal, Phone } from 'lucide-react';
 import { BeforeAfterSlider } from './BeforeAfterSlider';
 
 interface BeforeAfterGalleryProps {
@@ -8,43 +8,23 @@ interface BeforeAfterGalleryProps {
 }
 
 export const BeforeAfterGallery: React.FC<BeforeAfterGalleryProps> = () => {
-  const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
-
-  const currentProject = BEFORE_AFTER_PROJECTS[selectedProjectIndex];
+  const currentProject = BEFORE_AFTER_PROJECTS[0];
 
   return (
     <section id="showcase" className="py-20 bg-black relative border-t border-[#D4AF37]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
+        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/35 text-[#FDE79D] text-xs font-bold tracking-widest uppercase">
             <SlidersHorizontal className="w-3.5 h-3.5 text-[#D4AF37]" />
             <span>Interactive Comparison Showcase</span>
           </div>
           <h2 className="font-cinzel text-3xl sm:text-4xl font-bold text-white tracking-tight">
-            Proven Results: Before & After The Crown Treatment
+            Full Roof Restoration: Before & After
           </h2>
           <p className="text-neutral-400 text-base">
-            Drag the gold slider handle horizontally to reveal the transformative power of our complete roof restoration systems.
+            Drag the gold slider handle horizontally to reveal the complete transformation from weathered, porous tiles to our durable protective finish.
           </p>
-        </div>
-
-        {/* Project Selector Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10">
-          {BEFORE_AFTER_PROJECTS.map((project, idx) => (
-            <button
-              key={project.id}
-              onClick={() => setSelectedProjectIndex(idx)}
-              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
-                selectedProjectIndex === idx
-                  ? 'bg-crown-gold-gradient text-black font-bold shadow-md shadow-[#D4AF37]/20 border border-[#FDE79D]/40'
-                  : 'bg-[#0D0D0D] text-neutral-300 hover:text-white border border-[#D4AF37]/20'
-              }`}
-            >
-              {idx === 0 && <Sparkles className="w-3.5 h-3.5 fill-current" />}
-              <span>{project.category}</span>
-            </button>
-          ))}
         </div>
 
         {/* Showcase Feature Card */}
@@ -111,7 +91,7 @@ export const BeforeAfterGallery: React.FC<BeforeAfterGalleryProps> = () => {
                   className="w-full py-3.5 px-4 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm shadow-md shadow-[#D4AF37]/20 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer border border-[#FDE79D]/40"
                 >
                   <Phone className="w-4 h-4 fill-black" />
-                  <span>Call Mason For A Free Roof Quote: {BUSINESS_INFO.phone}</span>
+                  <span>Call Mason for a Free Roof Quote</span>
                 </a>
                 <p className="text-[11px] text-center text-neutral-400">
                   Direct phone call with Mason — get instant advice or schedule a free on-site roof inspection.

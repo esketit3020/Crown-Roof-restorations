@@ -295,7 +295,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   className="w-full py-2.5 px-3 rounded-xl bg-[#141414] hover:bg-crown-gold-gradient hover:text-black text-neutral-200 text-xs font-semibold border border-[#D4AF37]/25 hover:border-[#FDE79D]/40 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                 >
                   <Phone className="w-3.5 h-3.5 text-[#D4AF37]" />
-                  <span>Call to Book: {BUSINESS_INFO.phone}</span>
+                  <span>Call to Book</span>
                 </a>
               </div>
             </div>
@@ -333,7 +333,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               className="w-full sm:w-auto px-8 py-4 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm shadow-xl shadow-[#D4AF37]/20 active:scale-95 transition-all flex items-center justify-center gap-2 border border-[#FDE79D]/40"
             >
               <Phone className="w-4 h-4 fill-black" />
-              <span>Call Mason For Free Roof Assessment: {BUSINESS_INFO.phone}</span>
+              <span>Call Mason for Free Roof Assessment</span>
             </a>
           </div>
         </div>

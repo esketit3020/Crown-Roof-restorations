@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Star, Phone, ArrowRight, CheckCircle2, Award } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/roofingData';
 
@@ -6,15 +6,33 @@ interface HeroProps {
   onOpenQuoteModal?: () => void;
 }
 
+const HERO_IMAGE_CANDIDATES = [
+  '/qwerq (2).jpg',
+  '/qwerq.jpg',
+  '/hero-roof.jpg',
+  '/roof-after.jpg',
+];
+
 export const Hero: React.FC<HeroProps> = () => {
+  const [candidateIndex, setCandidateIndex] = useState(0);
+
+  const handleImageError = () => {
+    if (candidateIndex < HERO_IMAGE_CANDIDATES.length - 1) {
+      setCandidateIndex((prev) => prev + 1);
+    }
+  };
+
+  const currentHeroImg = HERO_IMAGE_CANDIDATES[candidateIndex];
+
   return (
     <section className="relative overflow-hidden bg-black pt-12 pb-20 md:pt-20 md:pb-32 border-b border-[#D4AF37]/25">
       {/* Full Hero Background Image with Rich Cinematic Dark Overlays */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img
-          src="/roof-after.jpg"
-          alt="Restored tile and tin roof by Crown Roof Restorations"
-          className="w-full h-full object-cover object-center opacity-50 md:opacity-55 scale-105"
+          src={currentHeroImg}
+          alt="Restored roof by Crown Roof Restorations"
+          onError={handleImageError}
+          className="w-full h-full object-cover object-center opacity-55 md:opacity-60 scale-105 transition-opacity duration-700"
         />
         {/* Dark directional gradient overlays for pristine text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/60" />
@@ -31,15 +49,20 @@ export const Hero: React.FC<HeroProps> = () => {
               <span>THE CROWN TREATMENT • 10-YEAR WORKMANSHIP WARRANTY</span>
             </div>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/80 border border-[#D4AF37]/35 text-xs font-semibold text-white backdrop-blur-md shadow">
+            <a
+              href="#reviews"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/80 border border-[#D4AF37]/35 hover:border-[#D4AF37] text-xs font-semibold text-white backdrop-blur-md shadow cursor-pointer transition-all group"
+            >
               <span className="text-[#D4AF37] font-bold">{BUSINESS_INFO.rating}</span>
               <div className="flex text-[#D4AF37]">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-3.5 h-3.5 fill-[#D4AF37]" />
                 ))}
               </div>
-              <span className="text-neutral-400">({BUSINESS_INFO.reviewCount} Local Reviews)</span>
-            </div>
+              <span className="text-neutral-300 group-hover:text-[#FDE79D] transition-colors">
+                5 Google Reviews (100% 5-Star)
+              </span>
+            </a>
           </div>
 
           {/* Main Headline */}
@@ -84,7 +107,7 @@ export const Hero: React.FC<HeroProps> = () => {
               className="group px-8 py-4.5 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-base sm:text-lg tracking-wide shadow-xl shadow-[#D4AF37]/25 border border-[#FDE79D]/50 active:scale-[0.98] transition-all flex items-center justify-center gap-3 cursor-pointer"
             >
               <Phone className="w-5 h-5 fill-black group-hover:rotate-12 transition-transform" />
-              <span>CALL FOR A FREE QUOTE: {BUSINESS_INFO.phone}</span>
+              <span>CALL FOR A FREE QUOTE</span>
             </a>
 
             <a
