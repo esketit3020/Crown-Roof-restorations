@@ -3,10 +3,10 @@ import { Star, ShieldCheck, Heart, CheckCircle2, ArrowRight, Phone, MessageSquar
 import { CUSTOMER_REVIEWS, BUSINESS_INFO } from '../data/roofingData';
 
 interface CustomerReviewsSectionProps {
-  onOpenQuoteModal: () => void;
+  onOpenQuoteModal?: () => void;
 }
 
-export const CustomerReviewsSection: React.FC<CustomerReviewsSectionProps> = ({ onOpenQuoteModal }) => {
+export const CustomerReviewsSection: React.FC<CustomerReviewsSectionProps> = () => {
   const [filter, setFilter] = useState<'all' | 'restorations' | 'gutters'>('all');
 
   const filteredReviews = CUSTOMER_REVIEWS.filter((review) => {
@@ -206,20 +206,12 @@ export const CustomerReviewsSection: React.FC<CustomerReviewsSectionProps> = ({ 
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
-            <button
-              onClick={onOpenQuoteModal}
-              className="px-6 py-3.5 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm tracking-wide shadow-lg flex items-center gap-2 cursor-pointer transition-all active:scale-95"
-            >
-              <span>GET A FREE QUOTE</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-
             <a
               href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
-              className="px-5 py-3.5 rounded-xl bg-black hover:bg-neutral-900 text-white font-bold text-sm border border-[#D4AF37]/40 flex items-center gap-2 transition-all"
+              className="px-7 py-4 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm tracking-wide shadow-xl shadow-[#D4AF37]/20 flex items-center gap-2 cursor-pointer transition-all active:scale-95 border border-[#FDE79D]/40"
             >
-              <Phone className="w-4 h-4 text-[#D4AF37]" />
-              <span>{BUSINESS_INFO.phone}</span>
+              <Phone className="w-4 h-4 fill-black" />
+              <span>CALL MASON FOR A QUOTE: {BUSINESS_INFO.phone}</span>
             </a>
           </div>
         </div>

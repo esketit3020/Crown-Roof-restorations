@@ -1,15 +1,14 @@
 import React from 'react';
-import { ArrowRight, Sparkles, ShieldCheck, CheckCircle2, Layers, Droplets, Paintbrush, Hammer } from 'lucide-react';
-import { ALL_SERVICES } from '../data/roofingData';
+import { ArrowRight, Sparkles, ShieldCheck, CheckCircle2, Layers, Droplets, Paintbrush, Hammer, Phone } from 'lucide-react';
+import { ALL_SERVICES, BUSINESS_INFO } from '../data/roofingData';
 
 interface FullServicesTeaserProps {
   onNavigateToServices: () => void;
-  onOpenQuoteModal: (serviceName?: string) => void;
+  onOpenQuoteModal?: (serviceName?: string) => void;
 }
 
 export const FullServicesTeaser: React.FC<FullServicesTeaserProps> = ({
   onNavigateToServices,
-  onOpenQuoteModal,
 }) => {
   const tileTinCount = ALL_SERVICES.filter((s) => s.category === 'tile-tin').length;
   const exteriorCount = ALL_SERVICES.filter((s) => s.category === 'exterior').length;
@@ -70,12 +69,13 @@ export const FullServicesTeaser: React.FC<FullServicesTeaserProps> = ({
                   <ArrowRight className="w-4 h-4" />
                 </button>
 
-                <button
-                  onClick={() => onOpenQuoteModal()}
-                  className="px-5 py-3.5 rounded-xl bg-[#141414] hover:bg-[#1F1F1F] text-white font-bold text-sm border border-[#D4AF37]/30 hover:border-[#D4AF37]/60 transition-all flex items-center justify-center cursor-pointer"
+                <a
+                  href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
+                  className="px-5 py-3.5 rounded-xl bg-[#141414] hover:bg-[#1F1F1F] text-white font-bold text-sm border border-[#D4AF37]/30 hover:border-[#D4AF37]/60 transition-all flex items-center justify-center gap-2"
                 >
-                  <span>Book Free Assessment</span>
-                </button>
+                  <Phone className="w-4 h-4 text-[#D4AF37]" />
+                  <span>Call: {BUSINESS_INFO.phone}</span>
+                </a>
               </div>
             </div>
 

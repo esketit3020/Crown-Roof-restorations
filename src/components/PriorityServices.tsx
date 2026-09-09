@@ -1,12 +1,12 @@
 import React from 'react';
-import { TOP_PRIORITY_SERVICES } from '../data/roofingData';
+import { TOP_PRIORITY_SERVICES, BUSINESS_INFO } from '../data/roofingData';
 import { ArrowRight, CheckCircle, ShieldCheck, Wrench, AlertTriangle, Sparkles, Clock, Phone } from 'lucide-react';
 
 interface PriorityServicesProps {
-  onOpenQuoteModal: (serviceName?: string) => void;
+  onOpenQuoteModal?: (serviceName?: string) => void;
 }
 
-export const PriorityServices: React.FC<PriorityServicesProps> = ({ onOpenQuoteModal }) => {
+export const PriorityServices: React.FC<PriorityServicesProps> = () => {
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'ShieldCheck':
@@ -109,18 +109,18 @@ export const PriorityServices: React.FC<PriorityServicesProps> = ({ onOpenQuoteM
                   <span className="text-white font-medium">{service.materials}</span>
                 </div>
 
-                <button
-                  id={`priority-quote-${service.id}`}
-                  onClick={() => onOpenQuoteModal(service.name)}
+                <a
+                  id={`priority-call-${service.id}`}
+                  href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
                   className={`w-full py-3 px-4 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 cursor-pointer ${
                     index === 0
                       ? 'bg-crown-gold-gradient hover:bg-crown-gold-hover text-black shadow-md shadow-[#D4AF37]/20 active:scale-[0.98] border border-[#FDE79D]/40'
-                      : 'bg-[#141414] hover:bg-[#1F1F1F] text-white hover:text-[#FDE79D] border border-[#D4AF37]/30 hover:border-[#D4AF37]/60'
+                      : 'bg-[#141414] hover:bg-crown-gold-gradient hover:text-black text-white border border-[#D4AF37]/30 hover:border-[#FDE79D]/40'
                   }`}
                 >
-                  <span>Request Assessment & Quote</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
+                  <Phone className="w-4 h-4" />
+                  <span>Call to Book: {BUSINESS_INFO.phone}</span>
+                </a>
               </div>
             </div>
           ))}
@@ -137,12 +137,13 @@ export const PriorityServices: React.FC<PriorityServicesProps> = ({ onOpenQuoteM
             </p>
           </div>
 
-          <button
-            onClick={() => onOpenQuoteModal('Roof Inspection / Assessment')}
-            className="shrink-0 px-6 py-3 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-bold text-sm transition-all shadow-md whitespace-nowrap cursor-pointer border border-[#FDE79D]/40"
+          <a
+            href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
+            className="shrink-0 px-7 py-3.5 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm transition-all shadow-lg whitespace-nowrap cursor-pointer border border-[#FDE79D]/40 flex items-center gap-2 active:scale-95"
           >
-            Get Free Roof Inspection
-          </button>
+            <Phone className="w-4 h-4 fill-black" />
+            <span>Call Mason: {BUSINESS_INFO.phone}</span>
+          </a>
         </div>
       </div>
     </section>

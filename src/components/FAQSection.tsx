@@ -3,10 +3,10 @@ import { TOP_CUSTOMER_QUESTIONS, BUSINESS_INFO } from '../data/roofingData';
 import { ChevronDown, HelpCircle, Phone, ArrowRight, ShieldCheck, CheckCircle } from 'lucide-react';
 
 interface FAQSectionProps {
-  onOpenQuoteModal: () => void;
+  onOpenQuoteModal?: () => void;
 }
 
-export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenQuoteModal }) => {
+export const FAQSection: React.FC<FAQSectionProps> = () => {
   // First item open by default
   const [openIds, setOpenIds] = useState<string[]>(['faq-1', 'faq-2', 'faq-3']);
 
@@ -94,20 +94,12 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenQuoteModal }) => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-            <button
-              onClick={onOpenQuoteModal}
-              className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-bold text-sm shadow-md shadow-[#D4AF37]/20 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer border border-[#FDE79D]/40"
-            >
-              <span>Book Free Professional Assessment</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-
             <a
               href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
-              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#141414] hover:bg-[#1F1F1F] text-white font-bold text-sm border border-[#D4AF37]/30 hover:border-[#D4AF37]/60 transition-all flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm shadow-xl shadow-[#D4AF37]/25 active:scale-95 transition-all flex items-center justify-center gap-2 border border-[#FDE79D]/40 cursor-pointer"
             >
-              <Phone className="w-4 h-4 text-[#D4AF37]" />
-              <span>Call: {BUSINESS_INFO.phone}</span>
+              <Phone className="w-4 h-4 fill-black" />
+              <span>Call Mason For Free Advice & Quote: {BUSINESS_INFO.phone}</span>
             </a>
           </div>
         </div>

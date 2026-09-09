@@ -3,10 +3,10 @@ import { Star, Phone, ArrowRight, CheckCircle2, Award } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/roofingData';
 
 interface HeroProps {
-  onOpenQuoteModal: () => void;
+  onOpenQuoteModal?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
+export const Hero: React.FC<HeroProps> = () => {
   return (
     <section className="relative overflow-hidden bg-black pt-12 pb-20 md:pt-20 md:pb-32 border-b border-[#D4AF37]/25">
       {/* Full Hero Background Image with Rich Cinematic Dark Overlays */}
@@ -76,24 +76,24 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
             </div>
           </div>
 
-          {/* Action Buttons */}
+          {/* Action Buttons: Primary is Direct Call to Mason */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-            <button
-              id="hero-book-quote-btn"
-              onClick={onOpenQuoteModal}
-              className="group px-8 py-4 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-base tracking-wide shadow-xl shadow-[#D4AF37]/20 border border-[#FDE79D]/40 active:scale-[0.98] transition-all flex items-center justify-center gap-3 cursor-pointer"
-            >
-              <span>BOOK A FREE ROOF QUOTE</span>
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </button>
-
             <a
               id="hero-call-btn"
               href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
-              className="px-7 py-4 rounded-xl bg-black/80 hover:bg-[#1A1A1A] text-white font-bold text-base border border-[#D4AF37]/40 hover:border-[#D4AF37] transition-all flex items-center justify-center gap-3 shadow-md backdrop-blur-sm group"
+              className="group px-8 py-4.5 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-base sm:text-lg tracking-wide shadow-xl shadow-[#D4AF37]/25 border border-[#FDE79D]/50 active:scale-[0.98] transition-all flex items-center justify-center gap-3 cursor-pointer"
             >
-              <Phone className="w-5 h-5 text-[#D4AF37] group-hover:rotate-12 transition-transform" />
-              <span>CALL: {BUSINESS_INFO.phone}</span>
+              <Phone className="w-5 h-5 fill-black group-hover:rotate-12 transition-transform" />
+              <span>CALL FOR A FREE QUOTE: {BUSINESS_INFO.phone}</span>
+            </a>
+
+            <a
+              id="hero-explore-btn"
+              href="#priority-services"
+              className="px-6 py-4.5 rounded-xl bg-black/80 hover:bg-[#1A1A1A] text-white font-bold text-base border border-[#D4AF37]/40 hover:border-[#D4AF37] transition-all flex items-center justify-center gap-2 shadow-md backdrop-blur-sm group"
+            >
+              <span>Explore Services</span>
+              <ArrowRight className="w-4 h-4 text-[#D4AF37] group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
 

@@ -1,13 +1,13 @@
 import React from 'react';
-import { Award, ShieldCheck, HeartHandshake, Eye, Clock, CheckCircle2, Shield, Wrench } from 'lucide-react';
+import { Award, ShieldCheck, HeartHandshake, Eye, Clock, CheckCircle2, Shield, Wrench, Phone } from 'lucide-react';
 import { CrownLogo } from './CrownLogo';
 import { BUSINESS_INFO } from '../data/roofingData';
 
 interface WhyCrownProps {
-  onOpenQuoteModal: () => void;
+  onOpenQuoteModal?: () => void;
 }
 
-export const WhyCrown: React.FC<WhyCrownProps> = ({ onOpenQuoteModal }) => {
+export const WhyCrown: React.FC<WhyCrownProps> = () => {
   const pillars = [
     {
       icon: ShieldCheck,
@@ -130,12 +130,13 @@ export const WhyCrown: React.FC<WhyCrownProps> = ({ onOpenQuoteModal }) => {
           <p className="text-neutral-300 text-sm mb-4">
             Want to see how we treat your roof? Get a free, transparent on-site inspection.
           </p>
-          <button
-            onClick={onOpenQuoteModal}
-            className="px-8 py-3.5 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-bold text-sm shadow-lg shadow-[#D4AF37]/20 active:scale-95 transition-all cursor-pointer border border-[#FDE79D]/40"
+          <a
+            href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
+            className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm shadow-xl shadow-[#D4AF37]/20 active:scale-95 transition-all cursor-pointer border border-[#FDE79D]/40"
           >
-            Experience The Crown Treatment
-          </button>
+            <Phone className="w-4 h-4 fill-black" />
+            <span>Call Mason For Free Inspection: {BUSINESS_INFO.phone}</span>
+          </a>
         </div>
       </div>
     </section>

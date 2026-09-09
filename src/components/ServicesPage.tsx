@@ -34,12 +34,11 @@ import {
 } from 'lucide-react';
 
 interface ServicesPageProps {
-  onOpenQuoteModal: (serviceName?: string) => void;
+  onOpenQuoteModal?: (serviceName?: string) => void;
   onNavigateHome: () => void;
 }
 
 export const ServicesPage: React.FC<ServicesPageProps> = ({
-  onOpenQuoteModal,
   onNavigateHome,
 }) => {
   const [activeTab, setActiveTab] = useState<'all' | 'tile-tin' | 'exterior'>('all');
@@ -291,13 +290,13 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
               {/* Action Button */}
               <div className="pt-3 border-t border-neutral-800 mt-auto">
-                <button
-                  onClick={() => onOpenQuoteModal(service.name)}
+                <a
+                  href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
                   className="w-full py-2.5 px-3 rounded-xl bg-[#141414] hover:bg-crown-gold-gradient hover:text-black text-neutral-200 text-xs font-semibold border border-[#D4AF37]/25 hover:border-[#FDE79D]/40 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                 >
-                  <span>Book Quote for this Service</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                  <Phone className="w-3.5 h-3.5 text-[#D4AF37]" />
+                  <span>Call to Book: {BUSINESS_INFO.phone}</span>
+                </a>
               </div>
             </div>
           ))}
@@ -329,20 +328,12 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-            <button
-              onClick={() => onOpenQuoteModal()}
-              className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-bold text-sm shadow-md shadow-[#D4AF37]/20 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer border border-[#FDE79D]/40"
-            >
-              <span>Request Free Multi-Service Assessment</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-
             <a
               href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
-              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#141414] hover:bg-[#1F1F1F] text-white font-bold text-sm border border-[#D4AF37]/30 hover:border-[#D4AF37]/60 transition-all flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm shadow-xl shadow-[#D4AF37]/20 active:scale-95 transition-all flex items-center justify-center gap-2 border border-[#FDE79D]/40"
             >
-              <Phone className="w-4 h-4 text-[#D4AF37]" />
-              <span>Call: {BUSINESS_INFO.phone}</span>
+              <Phone className="w-4 h-4 fill-black" />
+              <span>Call Mason For Free Roof Assessment: {BUSINESS_INFO.phone}</span>
             </a>
           </div>
         </div>

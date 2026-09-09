@@ -6,13 +6,12 @@ import { BUSINESS_INFO } from '../data/roofingData';
 interface NavbarProps {
   currentPage?: 'home' | 'services';
   onNavigate?: (page: 'home' | 'services', sectionId?: string) => void;
-  onOpenQuoteModal: (preselectedService?: string) => void;
+  onOpenQuoteModal?: (preselectedService?: string) => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   currentPage = 'home',
   onNavigate,
-  onOpenQuoteModal,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -139,24 +138,25 @@ export const Navbar: React.FC<NavbarProps> = ({
               </span>
             </a>
 
-            <button
-              id="nav-book-quote-btn"
-              onClick={() => onOpenQuoteModal()}
+            <a
+              id="nav-call-btn"
+              href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
               className="relative group overflow-hidden rounded-xl px-5 py-2.5 bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-xs sm:text-sm tracking-wider shadow-lg shadow-[#D4AF37]/20 active:scale-95 transition-all flex items-center gap-2 cursor-pointer border border-[#FDE79D]/40"
             >
-              <span>BOOK A FREE QUOTE</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </button>
+              <Phone className="w-4 h-4 fill-black group-hover:rotate-12 transition-transform" />
+              <span>CALL: {BUSINESS_INFO.phone}</span>
+            </a>
           </div>
 
           {/* Mobile Hamburger Toggle */}
           <div className="flex lg:hidden items-center gap-2">
-            <button
-              onClick={() => onOpenQuoteModal()}
-              className="sm:hidden text-xs px-3 py-1.5 bg-crown-gold-gradient text-black font-bold rounded-lg shadow"
+            <a
+              href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
+              className="sm:hidden text-xs px-3 py-1.5 bg-crown-gold-gradient text-black font-extrabold rounded-lg shadow flex items-center gap-1.5"
             >
-              Quote
-            </button>
+              <Phone className="w-3.5 h-3.5 fill-black" />
+              <span>Call</span>
+            </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg bg-[#141414] border border-[#D4AF37]/30 text-white hover:text-[#FDE79D]"
@@ -186,23 +186,14 @@ export const Navbar: React.FC<NavbarProps> = ({
                 {link.page === 'services' && <ArrowRight className="w-3.5 h-3.5" />}
               </button>
             ))}
-            <div className="pt-2 flex flex-col gap-2.5">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenQuoteModal();
-                }}
-                className="w-full py-3 bg-crown-gold-gradient text-black font-bold rounded-xl text-center text-xs tracking-wider uppercase shadow-md shadow-[#D4AF37]/20 flex items-center justify-center gap-2 cursor-pointer border border-[#FDE79D]/40"
-              >
-                <span>BOOK A FREE QUOTE</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
+            <div className="pt-2">
               <a
                 href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
-                className="w-full py-2.5 bg-[#141414] text-neutral-200 border border-[#D4AF37]/30 rounded-xl text-center text-xs font-semibold flex items-center justify-center gap-2"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full py-3.5 bg-crown-gold-gradient text-black font-extrabold rounded-xl text-center text-xs sm:text-sm tracking-wider uppercase shadow-md shadow-[#D4AF37]/20 flex items-center justify-center gap-2 border border-[#FDE79D]/40"
               >
-                <Phone className="w-3.5 h-3.5 text-[#D4AF37]" />
-                <span>Call: {BUSINESS_INFO.phone}</span>
+                <Phone className="w-4 h-4 fill-black" />
+                <span>CALL MASON: {BUSINESS_INFO.phone}</span>
               </a>
             </div>
           </div>

@@ -5,10 +5,10 @@ import { Phone, Mail, MapPin, ShieldCheck, Clock, Award, ArrowRight } from 'luci
 
 interface FooterProps {
   onNavigate?: (page: 'home' | 'services', sectionId?: string) => void;
-  onOpenQuoteModal: (serviceName?: string) => void;
+  onOpenQuoteModal?: (serviceName?: string) => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) => {
+export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   const tileTinServices = ALL_SERVICES.filter((s) => s.category === 'tile-tin').slice(0, 7);
   const exteriorServices = ALL_SERVICES.filter((s) => s.category === 'exterior');
 
@@ -71,13 +71,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
               <ul className="space-y-2.5 text-xs">
                 {TOP_PRIORITY_SERVICES.map((s) => (
                   <li key={s.id}>
-                    <button
-                      onClick={() => onOpenQuoteModal(s.name)}
+                    <a
+                      href="#priority-services"
                       className="text-left text-neutral-300 hover:text-[#FDE79D] transition-colors cursor-pointer flex items-center gap-1.5"
                     >
                       <ArrowRight className="w-3 h-3 text-[#D4AF37]" />
                       <span>{s.name}</span>
-                    </button>
+                    </a>
                   </li>
                 ))}
                 <li>
@@ -104,7 +104,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
                 {tileTinServices.map((s) => (
                   <li key={s.id}>
                     <button
-                      onClick={() => onOpenQuoteModal(s.name)}
+                      onClick={() => handleNavigate('services')}
                       className="text-left text-neutral-400 hover:text-[#FDE79D] transition-colors cursor-pointer"
                     >
                       {s.name}
@@ -156,12 +156,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
                 </div>
 
                 <div className="pt-2">
-                  <button
-                    onClick={() => onOpenQuoteModal()}
-                    className="w-full py-2.5 px-3 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-bold text-xs shadow hover:brightness-105 transition-all cursor-pointer border border-[#FDE79D]/40"
+                  <a
+                    href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
+                    className="w-full py-3 px-3 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-xs shadow-lg hover:brightness-105 transition-all flex items-center justify-center gap-2 border border-[#FDE79D]/40"
                   >
-                    Request Free Assessment
-                  </button>
+                    <Phone className="w-3.5 h-3.5 fill-black" />
+                    <span>CALL FOR A FREE QUOTE</span>
+                  </a>
                 </div>
               </div>
             </div>

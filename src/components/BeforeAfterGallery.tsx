@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { BEFORE_AFTER_PROJECTS } from '../data/roofingData';
-import { ShieldCheck, ArrowRight, Sparkles, SlidersHorizontal } from 'lucide-react';
+import { BEFORE_AFTER_PROJECTS, BUSINESS_INFO } from '../data/roofingData';
+import { ShieldCheck, ArrowRight, Sparkles, SlidersHorizontal, Phone } from 'lucide-react';
 import { BeforeAfterSlider } from './BeforeAfterSlider';
 
 interface BeforeAfterGalleryProps {
-  onOpenQuoteModal: (projectType?: string) => void;
+  onOpenQuoteModal?: (projectType?: string) => void;
 }
 
-export const BeforeAfterGallery: React.FC<BeforeAfterGalleryProps> = ({ onOpenQuoteModal }) => {
+export const BeforeAfterGallery: React.FC<BeforeAfterGalleryProps> = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
 
   const currentProject = BEFORE_AFTER_PROJECTS[selectedProjectIndex];
@@ -106,15 +106,15 @@ export const BeforeAfterGallery: React.FC<BeforeAfterGalleryProps> = ({ onOpenQu
 
               {/* Action Button */}
               <div className="pt-2 border-t border-neutral-800 space-y-3">
-                <button
-                  onClick={() => onOpenQuoteModal(currentProject.category)}
-                  className="w-full py-3.5 px-4 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-bold text-sm shadow-md shadow-[#D4AF37]/20 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer border border-[#FDE79D]/40"
+                <a
+                  href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
+                  className="w-full py-3.5 px-4 rounded-xl bg-crown-gold-gradient hover:bg-crown-gold-hover text-black font-extrabold text-sm shadow-md shadow-[#D4AF37]/20 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer border border-[#FDE79D]/40"
                 >
-                  <span>Request Free Assessment For Your Roof</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
+                  <Phone className="w-4 h-4 fill-black" />
+                  <span>Call Mason For A Free Roof Quote: {BUSINESS_INFO.phone}</span>
+                </a>
                 <p className="text-[11px] text-center text-neutral-400">
-                  Detailed on-site inspection with photographic roof report and itemized proposal.
+                  Direct phone call with Mason — get instant advice or schedule a free on-site roof inspection.
                 </p>
               </div>
             </div>

@@ -11,8 +11,7 @@ import { BeforeAfterGallery } from './components/BeforeAfterGallery';
 import { CustomerReviewsSection } from './components/CustomerReviewsSection';
 import { FAQSection } from './components/FAQSection';
 import { Footer } from './components/Footer';
-import { QuoteCalculatorModal } from './components/QuoteCalculatorModal';
-import { Phone, ShieldCheck } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import { BUSINESS_INFO } from './data/roofingData';
 
 export default function App() {
@@ -22,9 +21,6 @@ export default function App() {
     }
     return 'home';
   });
-
-  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
-  const [preselectedService, setPreselectedService] = useState<string | undefined>(undefined);
 
   // Sync state with browser hash (enabling back/forward button navigation)
   useEffect(() => {
@@ -66,23 +62,12 @@ export default function App() {
     }
   };
 
-  const handleOpenQuoteModal = (serviceName?: string) => {
-    setPreselectedService(serviceName);
-    setQuoteModalOpen(true);
-  };
-
-  const handleCloseQuoteModal = () => {
-    setQuoteModalOpen(false);
-    setPreselectedService(undefined);
-  };
-
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-[#D4AF37] selection:text-black flex flex-col">
+    <div className="min-h-screen bg-black text-white selection:bg-[#D4AF37] selection:text-black flex flex-col pb-16 lg:pb-0">
       {/* Navigation Bar */}
       <Navbar
         currentPage={currentPage}
         onNavigate={handleNavigate}
-        onOpenQuoteModal={handleOpenQuoteModal}
       />
 
       {/* Main Content: Conditional Page Rendering */}
@@ -90,41 +75,39 @@ export default function App() {
         {currentPage === 'services' ? (
           /* Dedicated Full Services Directory Page */
           <ServicesPage
-            onOpenQuoteModal={handleOpenQuoteModal}
             onNavigateHome={() => handleNavigate('home')}
           />
         ) : (
           /* Home Page */
           <>
             {/* 1. Hero Section with Core Tagline & Value Proposition */}
-            <Hero onOpenQuoteModal={() => handleOpenQuoteModal()} />
+            <Hero />
 
             {/* 2. Top Priority & Most Profitable Services (Aggressive Focus) */}
-            <PriorityServices onOpenQuoteModal={handleOpenQuoteModal} />
+            <PriorityServices />
 
             {/* 3. Full Services Preview / Bridge to Dedicated Services Page */}
             <FullServicesTeaser
               onNavigateToServices={() => handleNavigate('services')}
-              onOpenQuoteModal={handleOpenQuoteModal}
             />
 
             {/* 4. Why Crown & 10-Year Workmanship Warranty */}
-            <WhyCrown onOpenQuoteModal={() => handleOpenQuoteModal()} />
+            <WhyCrown />
 
             {/* 6. Materials, Systems & Specialty Work + Zero Job Exclusions */}
             <MaterialsSection />
 
             {/* 7. Who We Serve: Ideal Customer Categories */}
-            <IdealCustomerSection onOpenQuoteModal={handleOpenQuoteModal} />
+            <IdealCustomerSection />
 
             {/* 8. Before & After Showcase / Craftsmanship Proof */}
-            <BeforeAfterGallery onOpenQuoteModal={handleOpenQuoteModal} />
+            <BeforeAfterGallery />
 
             {/* 9. Verified Customer Reviews (Without Replies) */}
-            <CustomerReviewsSection onOpenQuoteModal={() => handleOpenQuoteModal()} />
+            <CustomerReviewsSection />
 
             {/* 10. Top 3 Customer Questions & Answers + Professional Assessment Banner */}
-            <FAQSection onOpenQuoteModal={() => handleOpenQuoteModal()} />
+            <FAQSection />
           </>
         )}
       </main>
@@ -132,36 +115,22 @@ export default function App() {
       {/* Footer */}
       <Footer
         onNavigate={handleNavigate}
-        onOpenQuoteModal={handleOpenQuoteModal}
       />
 
-      {/* Interactive Free Roof Assessment & Quote Modal */}
-      <QuoteCalculatorModal
-        isOpen={quoteModalOpen}
-        onClose={handleCloseQuoteModal}
-        preselectedService={preselectedService}
-      />
-
-      {/* Mobile Floating Quick Call / Quote Bar */}
+      {/* Mobile Floating Quick Direct Call Bar */}
       <aside
-        aria-label="Quick contact"
-        className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-black/95 backdrop-blur-md border-t border-[#D4AF37]/35 p-2.5 flex items-center justify-between gap-2 shadow-2xl"
+        aria-label="Quick call contact"
+        className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-black/95 backdrop-blur-md border-t border-[#D4AF37]/35 p-3 flex items-center justify-center shadow-2xl"
       >
         <a
           href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
-          className="flex-1 py-2.5 px-3 rounded-xl bg-[#0D0D0D] text-white font-bold text-xs flex items-center justify-center gap-1.5 border border-[#D4AF37]/30 active:scale-95 hover:border-[#D4AF37]"
+          className="w-full py-3.5 px-4 rounded-xl bg-crown-gold-gradient text-black font-extrabold text-sm shadow-xl active:scale-95 flex items-center justify-center gap-2.5 border border-[#FDE79D]/40 cursor-pointer"
         >
-          <Phone className="w-3.5 h-3.5 text-[#D4AF37]" />
-          <span>Call {BUSINESS_INFO.phone}</span>
+          <Phone className="w-4 h-4 fill-black" />
+          <span>CALL MASON NOW: {BUSINESS_INFO.phone}</span>
         </a>
-        <button
-          onClick={() => handleOpenQuoteModal()}
-          className="flex-1 py-2.5 px-3 rounded-xl bg-crown-gold-gradient text-black font-extrabold text-xs shadow-md active:scale-95 flex items-center justify-center gap-1.5 border border-[#FDE79D]/40"
-        >
-          <ShieldCheck className="w-3.5 h-3.5" />
-          <span>Free Roof Quote</span>
-        </button>
       </aside>
     </div>
   );
 }
+
